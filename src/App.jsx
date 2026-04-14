@@ -1,3 +1,11 @@
+import sentiment from "./assets/sentiment.png";
+import nutrition from "./assets/nutrition.png";
+import konser from "./assets/konser.png";
+import sosmed from "./assets/sosmed.png";
+
+import profile from "./assets/profile.jpg";
+import profile2 from "./assets/profile2.jpg";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
@@ -236,7 +244,7 @@ const skills = [
 
             {/* IMAGE */}
             <img
-              src="/profile.jpg"
+              img src={profile}
               alt="profile"
               className="relative 
               w-72 
@@ -294,7 +302,7 @@ const skills = [
               <div className="relative rotate-[-2deg]">
 
                 <img
-                  src="/profile2.jpg"
+                  img src={profile2}
                   alt="profile2"
                   className="w-full max-w-[320px] md:w-[340px] md:h-[220px] lg:w-[380px] lg:h-[240px] 
                   object-cover rounded-xl border border-white/10 
@@ -494,7 +502,7 @@ const skills = [
           {[
             {
               title: "Analisis Sentimen Pelantikan Presiden RI 2024",
-              image: "/sentiment.png",
+              image: sentiment,
               desc: "Optimalisasi metode Naive Bayes dengan SMOTE untuk meningkatkan akurasi dalam analisis sentimen data dari aplikasi X.",
               tags: ["Python", "Naive Bayes", "SMOTE", "NLP"],
               badge: "SINTA 2",
@@ -505,7 +513,7 @@ const skills = [
             },
             {
               title: "Nutritional Status Diagnosis System",
-              image: "/nutrition.png",
+              image: nutrition,
               desc: "Sistem pakar berbasis web untuk mendiagnosis status gizi secara cepat dan akurat.",
               tags: ["Laravel", "PHP", "MySQL", "Tailwind"],
               links: [
@@ -514,7 +522,7 @@ const skills = [
             },
             {
               title: "KonserKita Ticketing System",
-              image: "/konser.png",
+              image: konser,
               desc: "Platform pemesanan tiket konser berbasis web dengan fitur lengkap dan dashboard admin.",
               tags: ["Laravel 11", "Tailwind", "MySQL"],
               links: [
@@ -523,7 +531,7 @@ const skills = [
             },
             {
               title: "SOSMEDCARE Expert System",
-              image: "/sosmed.png",
+              image: sosmed,
               desc: "Sistem pakar berbasis web dengan metode Backward Chaining untuk analisis kecanduan media sosial.",
               tags: ["PHP", "MySQL", "Backward Chaining"],
               links: [
