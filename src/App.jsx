@@ -494,7 +494,7 @@ const skills = [
           {[
             {
               title: "Analisis Sentimen Pelantikan Presiden RI 2024",
-              image: "/public/sentiment.png",
+              image: "/sentiment.png",
               desc: "Optimalisasi metode Naive Bayes dengan SMOTE untuk meningkatkan akurasi dalam analisis sentimen data dari aplikasi X.",
               tags: ["Python", "Naive Bayes", "SMOTE", "NLP"],
               badge: "SINTA 2",
@@ -505,7 +505,7 @@ const skills = [
             },
             {
               title: "Nutritional Status Diagnosis System",
-              image: "/public/nutrition.png",
+              image: "/nutrition.png",
               desc: "Sistem pakar berbasis web untuk mendiagnosis status gizi secara cepat dan akurat.",
               tags: ["Laravel", "PHP", "MySQL", "Tailwind"],
               links: [
@@ -514,7 +514,7 @@ const skills = [
             },
             {
               title: "KonserKita Ticketing System",
-              image: "/public/konser.png",
+              image: "/konser.png",
               desc: "Platform pemesanan tiket konser berbasis web dengan fitur lengkap dan dashboard admin.",
               tags: ["Laravel 11", "Tailwind", "MySQL"],
               links: [
@@ -523,7 +523,7 @@ const skills = [
             },
             {
               title: "SOSMEDCARE Expert System",
-              image: "/public/sosmed.png",
+              image: "/sosmed.png",
               desc: "Sistem pakar berbasis web dengan metode Backward Chaining untuk analisis kecanduan media sosial.",
               tags: ["PHP", "MySQL", "Backward Chaining"],
               links: [
