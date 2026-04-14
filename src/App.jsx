@@ -17,6 +17,7 @@ import { useState } from "react";
 
 function App() {
   // ✅ state harus di dalam component
+const [openMenu, setOpenMenu] = useState(false);
 const [openContact, setOpenContact] = useState(false);
 const [activeTab, setActiveTab] = useState("internship");
 const softSkills = [
@@ -41,51 +42,37 @@ const skills = [
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-[#3a4630]/60 border-b border-[#889063]/40">
 
-        <div className="flex flex-col md:flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 py-4 max-w-6xl mx-auto">
+        <div className="flex items-center justify-between px-6 md:px-12 lg:px-20 py-4 max-w-6xl mx-auto">
 
           {/* LOGO */}
           <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-[#f0eadf]">
             My<span className="text-[#aab38a]">Portfolio</span>
           </h1>
 
-          {/* MENU */}
+          {/* HAMBURGER (MOBILE ONLY) */}
+          <button
+            onClick={() => setOpenMenu(!openMenu)}
+            className="md:hidden text-white text-2xl"
+          >
+            ☰
+          </button>
+
+          {/* MENU DESKTOP */}
           <ul className="
-            flex flex-wrap 
-            justify-center lg:justify-start
-            gap-3 md:gap-6 lg:gap-10
+            hidden md:flex
+            gap-6 lg:gap-10
             text-sm md:text-base lg:text-lg
-            font-medium text-gray-300 tracking-wide 
-            mt-3 lg:mt-0
+            font-medium text-gray-300 tracking-wide
           ">
 
-            <li>
-              <button className="hover:text-[#c2caa0] transition">
-                Home
-              </button>
-            </li>
-
-            <li>
-              <a href="#about" className="hover:text-white transition">
-                About
-              </a>
-            </li>
-
-            <li>
-              <a href="#projects" className="hover:text-[#c2caa0] transition">
-                Projects
-              </a>
-            </li>
-
-            <li>
-              <a href="#experience" className="hover:text-white transition">
-                Experience
-              </a>
-            </li>
-
+            <li><a href="#home" className="hover:text-white transition">Home</a></li>
+            <li><a href="#about" className="hover:text-white transition">About</a></li>
+            <li><a href="#projects" className="hover:text-[#c2caa0] transition">Projects</a></li>
+            <li><a href="#experience" className="hover:text-white transition">Experience</a></li>
             <li>
               <button
                 onClick={() => setOpenContact(true)}
-                className="text-[#e7e5e4] hover:text-[#c2d3a0] transition duration-300 cursor-pointer"
+                className="text-[#e7e5e4] hover:text-[#c2d3a0] transition"
               >
                 Contact
               </button>
@@ -95,6 +82,34 @@ const skills = [
 
         </div>
 
+        {/* MOBILE MENU */}
+        {openMenu && (
+          <div className="md:hidden px-6 pb-6 animate-fadeIn">
+
+            <ul className="flex flex-col gap-4 text-gray-300 text-base">
+
+              <li><a href="#home" onClick={() => setOpenMenu(false)}>Home</a></li>
+              <li><a href="#about" onClick={() => setOpenMenu(false)}>About</a></li>
+              <li><a href="#projects" onClick={() => setOpenMenu(false)}>Projects</a></li>
+              <li><a href="#experience" onClick={() => setOpenMenu(false)}>Experience</a></li>
+
+              <li>
+                <button
+                  onClick={() => {
+                    setOpenContact(true);
+                    setOpenMenu(false);
+                  }}
+                  className="text-left text-[#e7e5e4]"
+                >
+                  Contact
+                </button>
+              </li>
+
+            </ul>
+
+          </div>
+        )}
+
       </nav>
       
       {/* HERO */}
@@ -103,7 +118,7 @@ const skills = [
         className="relative flex flex-col md:flex-row items-center justify-between 
                   px-6 md:px-20 md:pl-20 lg:pl-28
                   min-h-screen
-                  pt-32 md:pt-36 pb-24 md:pb-32 
+                  pt-20 md:pt-36 pb-24 md:pb-32 
                   gap-12 md:gap-16 max-w-[1400px] mx-auto overflow-visible"
       >
 
