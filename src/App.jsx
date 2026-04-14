@@ -291,10 +291,10 @@ const skills = [
           ABOUT
         </h1>
 
-        <div className="relative z-10 flex flex-col md:flex-row md:items-start gap-10 md:gap-20 mt-14 md:mt-16">
+        <div className="relative z-10 flex flex-col md:flex-row md:items-start gap-10 md:gap-12 lg:gap-20 mt-14 md:mt-16">
 
           {/* LEFT */}
-          <div className="md:w-1/3 flex flex-col items-center md:items-start mt-0 md:mt-0">
+          <div className="md:w-2/5 lg:w-1/3 flex flex-col items-center md:items-start mt-0 md:mt-0">
 
             <h2 className="text-2xl md:text-3xl font-semibold text-[#f5f5f4] leading-snug text-center md:text-left">
               Tentang Saya
@@ -305,7 +305,7 @@ const skills = [
             </p>
 
             {/* 📸 FOTO */}
-            <div className="mt-8 relative md:translate-x-4">
+            <div className="mt-8 relative md:translate-x-2 lg:translate-x-4">
 
               {/* glow */}
               <div className="absolute inset-0 rounded-xl bg-[#889063]/20 blur-2xl"></div>
@@ -320,7 +320,7 @@ const skills = [
                 <img
                   img src={profile2}
                   alt="profile2"
-                  className="w-full max-w-[320px] md:w-[340px] md:h-[220px] lg:w-[380px] lg:h-[240px] 
+                  className="w-full max-w-[320px] md:w-[300px] md:h-[200px] lg:w-[380px] lg:h-[240px]
                   object-cover rounded-xl border border-white/10 
                   shadow-[0_20px_50px_rgba(0,0,0,0.35)]
                   transition duration-500 hover:scale-105 hover:rotate-0"
@@ -333,7 +333,7 @@ const skills = [
           </div>
 
           {/* RIGHT */}
-          <div className="md:w-2/3 relative mt-0 md:mt-0">
+          <div className="md:w-3/5 lg:w-2/3 relative mt-0 md:mt-0">
 
             {/* 💎 CARD */}
             <div className="relative p-6 md:p-10 rounded-2xl 
@@ -346,7 +346,7 @@ const skills = [
               <div className="absolute inset-0 rounded-2xl 
                 bg-gradient-to-b from-white/10 to-transparent opacity-30"></div>
 
-              <div className="relative z-10 space-y-5 text-[#e7e5e4] text-sm md:text-lg leading-relaxed text-justify">
+              <div className="relative z-10 space-y-5 text-[#e7e5e4] text-sm md:text-base lg:text-lg leading-relaxed text-justify">
 
                 <p>
                   Saya adalah seorang 
