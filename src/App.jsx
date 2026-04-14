@@ -107,6 +107,7 @@ const skills = [
                   gap-12 md:gap-16 max-w-[1400px] mx-auto overflow-visible"
       >
 
+
         {/* TEXT */}
         <div className="flex-1 w-full relative z-10 mt-16 md:mt-24 
                 text-center md:text-left 
