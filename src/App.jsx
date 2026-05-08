@@ -187,7 +187,7 @@ const skills = [
                         text-center md:text-left
                         w-full md:ml-10"
                                 >
-            Fullstack Web Developer | Software Engineer | Data & QA Enthusiast
+            Fullstack Web Developer | Software Engineer | Data & QA Enthusiast 
           </motion.p>
 
           {/* BUTTONS */}
