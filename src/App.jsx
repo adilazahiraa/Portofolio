@@ -11,6 +11,7 @@ import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import ContactModal from "./components/ContactModal";
+import CvModal from "./components/CvModal";
 
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -20,6 +21,7 @@ function App() {
 const [openMenu, setOpenMenu] = useState(false);
 const [openContact, setOpenContact] = useState(false);
 const [activeTab, setActiveTab] = useState("internship");
+const [openCV, setOpenCV] = useState(false);
 const softSkills = [
   { name: "Teamwork", x: "-40%", y: "-10%" },
   { name: "Communication", x: "30%", y: "-20%" },
@@ -29,10 +31,12 @@ const softSkills = [
   { name: "Adaptability", x: "20%", y: "-40%" },
 ];
 const skills = [
-  "Python", "Flask", "PHP", "Laravel", "Codeigniter 3",
-  "JavaScript", "HTML", "CSS",
-  "Tailwind", "Bootstrap",
+  "Python", "Flask", "PHP", "Laravel", "CodeIgniter 3",
+  "JavaScript", "React JS", "HTML", "CSS",
+  "Tailwind CSS", "Bootstrap",
   "MySQL", "SQLite",
+  "REST API Development",
+  "Software Testing",
   "Machine Learning", "Data Analysis"
 ];
 
@@ -216,15 +220,12 @@ const skills = [
             </a>
 
             {/* DOWNLOAD CV */}
-            <a
-              href="/cv.pdf"
-              download
+            <button
+              onClick={() => setOpenCV(true)}
               className="group relative px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-gray-300 text-sm font-medium hover:text-white hover:bg-white/10 transition active:scale-95"
             >
-              <span className="relative z-10">Download CV</span>
-
-              <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 bg-purple-400/10 blur-md transition"></div>
-            </a>
+              Download CV
+            </button>
 
           </div>
 
@@ -931,6 +932,8 @@ const skills = [
         </div>
 
       </footer>
+
+      <CvModal open={openCV} onClose={() => setOpenCV(false)} />
 
       {/* 🔥 INI WAJIB ADA */}
       <ContactModal
