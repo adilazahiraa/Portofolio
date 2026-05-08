@@ -185,9 +185,9 @@ const skills = [
                         text-[#e7e5e4]/80 font-medium 
                         mt-8 
                         text-center md:text-left
-                        w-full md:ml-32"
+                        w-full md:ml-10"
                                 >
-            Web Developer | UI/UX Designer | Data Analyst
+            Fullstack Web Developer | Software Engineer | Data & QA Enthusiast
           </motion.p>
 
           {/* BUTTONS */}
@@ -350,20 +350,16 @@ const skills = [
               <div className="relative z-10 space-y-5 text-[#e7e5e4] text-sm md:text-base lg:text-lg leading-relaxed text-justify">
 
                 <p>
-                  Saya adalah seorang 
-                  <span className="text-[#d6ba7b] font-medium"> Web Developer</span>, 
-                  <span className="text-[#d6ba7b] font-medium"> UI/UX Designer</span>, 
-                  dan 
-                  <span className="text-[#d6ba7b] font-medium"> Data Analyst</span>{" "} 
-                  yang berfokus pada pengembangan solusi digital yang modern, fungsional, dan user-friendly.
+                  Saya adalah seorang <span className="text-[#d6ba7b] font-medium">Informatics graduate</span>{" "} 
+                  dengan pengalaman dalam pengembangan aplikasi berbasis web, pengujian perangkat lunak, serta pengolahan data dari berbagai proyek akademik dan magang.
                 </p>
 
                 <p>
-                  Memiliki minat dalam membangun website end-to-end, mulai dari perancangan tampilan hingga implementasi sistem yang optimal dan responsif.
+                  Terbiasa membangun aplikasi dari sisi frontend hingga backend, termasuk pengelolaan database, integrasi API, serta implementasi fitur yang berfokus pada fungsionalitas dan pengalaman pengguna.
                 </p>
 
                 <p>
-                  Selain itu, saya juga terbiasa mengolah data menjadi insight yang bermakna untuk mendukung pengambilan keputusan yang lebih tepat.
+                  Selain pengembangan sistem, saya juga memiliki ketertarikan pada <span className="text-[#d6ba7b] font-medium">Software Quality Assurance</span> dan analisis data untuk memastikan sistem yang dibangun tidak hanya berjalan dengan baik, tetapi juga andal dan terukur.
                 </p>
 
               </div>
@@ -896,7 +892,7 @@ const skills = [
 
           {/* DESC */}
           <p className="text-[#bdb5a8] text-sm mt-2">
-            Web Developer • UI/UX • Daya Analyst Enthusiast
+            Fullstack Web Developer  •  Software Engineer  •  Data & QA Enthusiast
           </p>
 
           {/* LINKS */}
