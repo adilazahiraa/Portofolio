@@ -2,6 +2,7 @@ import sentiment from "./assets/sentiment.png";
 import nutrition from "./assets/nutrition.png";
 import konser from "./assets/konser.png";
 import sosmed from "./assets/sosmed.png";
+import jobtracker from "./assets/jobtracker.png"
 
 import profile from "./assets/profile.jpg";
 import profile2 from "./assets/profile2.jpg";
@@ -14,6 +15,7 @@ import ContactModal from "./components/ContactModal";
 import CvModal from "./components/CvModal";
 
 import { motion } from "framer-motion";
+import certIcon from "./assets/online-learning.png";
 import { useState } from "react";
 
 function App() {
@@ -31,11 +33,16 @@ const softSkills = [
   { name: "Adaptability", x: "20%", y: "-40%" },
 ];
 const skills = [
-  "Python", "Flask", "PHP", "Laravel", "CodeIgniter 3",
-  "JavaScript", "React JS", "HTML", "CSS",
+  "C#", "ASP.NET Core",
+  "Python", "Flask",
+  "PHP", "Laravel", "CodeIgniter 3",
+  "JavaScript", "React JS",
+  "HTML", "CSS",
   "Tailwind CSS", "Bootstrap",
-  "MySQL", "SQLite",
+  "PostgreSQL", "MySQL", "SQLite",
   "REST API Development",
+  "Entity Framework Core",
+  "Authentication & Authorization",
   "Software Testing",
   "Machine Learning", "Data Analysis"
 ];
@@ -185,9 +192,9 @@ const skills = [
                         text-[#e7e5e4]/80 font-medium 
                         mt-8 
                         text-center md:text-left
-                        w-full md:ml-10"
+                        w-full md:ml-24"
                                 >
-            Fullstack Web Developer | Software Engineer | Data & QA Enthusiast 
+            Software Engineer | Fullstack Developer | QA Enthusiast 
           </motion.p>
 
           {/* BUTTONS */}
@@ -350,16 +357,19 @@ const skills = [
               <div className="relative z-10 space-y-5 text-[#e7e5e4] text-sm md:text-base lg:text-lg leading-relaxed text-justify">
 
                 <p>
-                  Saya adalah seorang <span className="text-[#d6ba7b] font-medium">Informatics graduate</span>{" "} 
-                  dengan pengalaman dalam pengembangan aplikasi berbasis web, pengujian perangkat lunak, serta pengolahan data dari berbagai proyek akademik dan magang.
+                  Saya adalah seorang <span className="text-[#d6ba7b] font-medium">fresh graduate Informatika</span>{" "}
+                  yang berfokus pada pengembangan aplikasi web dan backend melalui berbagai proyek akademik, personal project, dan pengalaman magang.
                 </p>
 
                 <p>
-                  Terbiasa membangun aplikasi dari sisi frontend hingga backend, termasuk pengelolaan database, integrasi API, serta implementasi fitur yang berfokus pada fungsionalitas dan pengalaman pengguna.
+                  Memiliki pengalaman dalam membangun aplikasi fullstack menggunakan React.js, ASP.NET Core, Laravel, dan PostgreSQL, termasuk integrasi REST API, pengelolaan database, serta implementasi fitur yang berfokus pada fungsionalitas dan pengalaman pengguna.
                 </p>
 
                 <p>
-                  Selain pengembangan sistem, saya juga memiliki ketertarikan pada <span className="text-[#d6ba7b] font-medium">Software Quality Assurance</span> dan analisis data untuk memastikan sistem yang dibangun tidak hanya berjalan dengan baik, tetapi juga andal dan terukur.
+                  Saya tertarik pada bidang <span className="text-[#d6ba7b] font-medium">Software Engineering</span>,{" "}
+                  <span className="text-[#d6ba7b] font-medium">Fullstack Development</span>, dan{" "}
+                  <span className="text-[#d6ba7b] font-medium">Software Quality Assurance</span>{" "}
+                  untuk membangun sistem yang scalable, terstruktur, dan andal.
                 </p>
 
               </div>
@@ -501,116 +511,282 @@ const skills = [
 
       </section>
 
-      {/* PROJECTS */}
-      <section id="projects" className="py-32 px-6 md:px-20 max-w-[1200px] mx-auto">
+      {/* CERTIFICATIONS */}
+      <section className="py-28 px-6 md:px-20 max-w-[1100px] mx-auto">
 
         {/* TITLE */}
-        <h2 className="text-3xl md:text-4xl font-semibold mb-20 text-center text-[#f5f5f4] tracking-tight">
-          Selected Projects
-        </h2>
+        <div className="mb-14 text-center">
 
-        {/* GRID */}
+          <p className="text-[#aab38a] uppercase tracking-[0.3em] text-xs mb-3">
+            Professional Development
+          </p>
+
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#f5f5f4] tracking-tight">
+            Sertifikasi & Pelatihan
+          </h2>
+
+        </div>
+
+        {/* CARD */}
+        <div
+          className="group relative overflow-hidden rounded-3xl 
+          border border-white/10 bg-white/[0.04] 
+          backdrop-blur-xl p-8 md:p-10
+          hover:border-[#c8b38a]/40 
+          transition-all duration-500
+          hover:-translate-y-2
+          hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+        >
+
+          {/* 🌟 BACKGROUND GLOW */}
+          <div
+            className="absolute inset-0 opacity-0 group-hover:opacity-100
+            transition duration-500"
+          >
+
+            <div
+              className="absolute -top-10 -right-10 w-72 h-72
+              bg-[#c8b38a]/15 blur-3xl rounded-full"
+            ></div>
+
+            <div
+              className="absolute bottom-0 left-0 w-52 h-52
+              bg-[#889063]/10 blur-3xl rounded-full"
+            ></div>
+
+          </div>
+
+          {/* ✨ SHINE EFFECT */}
+          <div
+            className="absolute inset-0 opacity-0 group-hover:opacity-100
+            transition duration-700"
+          >
+
+            <div
+              className="absolute -left-32 top-0 h-full w-24
+              rotate-12 bg-white/10 blur-2xl
+              translate-x-0 group-hover:translate-x-[900px]
+              transition-transform duration-1000"
+            ></div>
+
+          </div>
+
+          <div className="relative z-10">
+
+            {/* TOP */}
+            <div className="flex flex-wrap items-center gap-5 mb-6">
+
+              {/* ICON */}
+              <div
+                className="w-16 h-16 rounded-2xl 
+                bg-[#c8b38a]/10 border border-[#c8b38a]/20
+                flex items-center justify-center
+                transition duration-500
+                group-hover:scale-110
+                group-hover:rotate-3
+                group-hover:bg-[#c8b38a]/20"
+              >
+
+              <img
+                src={certIcon}
+                alt="certificate"
+                className="w-9 h-9 object-contain invert 
+                opacity-90 group-hover:opacity-100 transition"
+              />
+
+              </div>
+
+              {/* TEXT */}
+              <div>
+
+                <h3
+                  className="text-xl md:text-2xl font-semibold text-white
+                  transition duration-300 group-hover:text-[#f6f1e8]"
+                >
+                  Back-End Development with .NET
+                </h3>
+
+                <p className="text-sm text-[#b8b2a7] mt-1">
+                  Microsoft via Coursera • 2026
+                </p>
+
+              </div>
+
+            </div>
+
+            {/* DESCRIPTION */}
+            <p
+              className="text-[#ddd6ce] leading-relaxed 
+              text-sm md:text-base"
+            >
+              Mempelajari pengembangan backend modern menggunakan C#, ASP.NET Core,
+              REST API Development, Entity Framework Core, Authentication &
+              Authorization, Dependency Injection, Swagger/OpenAPI, Middleware,
+              API Testing, serta integrasi frontend dan backend.
+            </p>
+
+            {/* TAGS */}
+            <div className="flex flex-wrap gap-3 mt-7">
+
+              {[
+                "ASP.NET Core",
+                "REST API",
+                "Entity Framework",
+                "Authentication",
+                "Swagger",
+                "API Testing"
+              ].map((item, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1.5 rounded-lg 
+                  bg-white/5 border border-white/10
+                  text-sm text-[#e7e5e4]
+                  transition-all duration-300
+                  hover:scale-105
+                  hover:bg-[#c8b38a]/10
+                  hover:border-[#c8b38a]/30
+                  hover:text-white"
+                >
+                  {item}
+                </span>
+              ))}
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* PROJECTS */}
+      <section
+        id="projects"
+        className="py-32 px-6 md:px-20 max-w-[1200px] mx-auto"
+      >
+        <div className="mb-20 text-center">
+          <p className="text-[#aab38a] uppercase tracking-[0.3em] text-xs mb-3">
+            Portfolio
+          </p>
+
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#f5f5f4] tracking-tight">
+            Selected Projects
+          </h2>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-12">
-
           {[
             {
-              title: "Analisis Sentimen Pelantikan Presiden RI 2024",
-              image: sentiment,
-              desc: "Optimalisasi metode Naive Bayes dengan SMOTE untuk meningkatkan akurasi dalam analisis sentimen data dari aplikasi X.",
-              tags: ["Python", "Naive Bayes", "SMOTE", "NLP"],
-              badge: "SINTA 2",
+              title: "JobTracker",
+              image: jobtracker,
+              desc: "Aplikasi web fullstack untuk mengelola lamaran kerja, jadwal interview, catatan, dan progress karier dalam satu workspace.",
+              tags: ["React", "ASP.NET Core", "PostgreSQL", "Tailwind"],
+              badge: "Fullstack Developer",
               links: [
-                { label: "Publication", url: "https://jutif.if.unsoed.ac.id/index.php/jurnal/article/view/4290" },
-                { label: "GitHub", url: "https://github.com/adilazahiraa/text-mining-sentiment-analysis" }
-              ]
+                { label: "GitHub", url: "https://github.com/adilazahiraa/jobtracker-fullstack" },
+              ],
             },
             {
               title: "Nutritional Status Diagnosis System",
               image: nutrition,
-              desc: "Sistem pakar berbasis web untuk mendiagnosis status gizi secara cepat dan akurat.",
-              tags: ["Laravel", "PHP", "MySQL", "Tailwind"],
+              desc: "Aplikasi sistem pakar berbasis web untuk mendiagnosis status gizi dan memberikan rekomendasi secara personal.",
+              tags: ["Python", "Flask", "SQLite", "Tailwind"],
+              badge: "Fullstack Developer",
               links: [
-                { label: "GitHub", url: "https://github.com/adilazahiraa/skripsi" }
-              ]
+                { label: "GitHub", url: "https://github.com/adilazahiraa/skripsi" },
+              ],
             },
             {
               title: "KonserKita Ticketing System",
               image: konser,
-              desc: "Platform pemesanan tiket konser berbasis web dengan fitur lengkap dan dashboard admin.",
-              tags: ["Laravel 11", "Tailwind", "MySQL"],
+              desc: "Platform pemesanan tiket konser berbasis web dengan antarmuka responsif, dashboard admin, dan pengalaman pengguna yang nyaman.",
+              tags: ["Figma", "UI/UX Design", "Laravel", "Tailwind"],
+              badge: "UI/UX Designer",
               links: [
-                { label: "GitHub", url: "https://github.com/adilazahiraa/konserkita-ticketing-system" }
-              ]
+                { label: "GitHub", url: "https://github.com/adilazahiraa/konserkita-ticketing-system" },
+              ],
             },
             {
               title: "SOSMEDCARE Expert System",
               image: sosmed,
-              desc: "Sistem pakar berbasis web dengan metode Backward Chaining untuk analisis kecanduan media sosial.",
-              tags: ["PHP", "MySQL", "Backward Chaining"],
+              desc: "Sistem pakar berbasis web dengan metode Backward Chaining untuk menganalisis tingkat kecanduan media sosial.",
+              tags: ["Laravel", "PHP", "SQLite", "Backward Chaining"],
+              badge: "Backend Developer",
               links: [
-                { label: "GitHub", url: "https://github.com/adilazahiraa/sosmedcare-expert-system" }
-              ]
-            }
+                { label: "GitHub", url: "https://github.com/adilazahiraa/sosmedcare-expert-system" },
+              ],
+            },
+            {
+              title: "Indonesian Presidential Inauguration Sentiment Analysis",
+              image: sentiment,
+              desc: "Proyek data science untuk menganalisis sentimen masyarakat di platform X menggunakan preprocessing teks, TF-IDF, Naive Bayes, dan optimasi SMOTE.",
+              tags: ["Python", "Naive Bayes", "SMOTE", "NLP"],
+              badge: "Data Science",
+              links: [
+                {
+                  label: "Publication",
+                  url: "https://jutif.if.unsoed.ac.id/index.php/jurnal/article/view/4290",
+                },
+                {
+                  label: "GitHub",
+                  url: "https://github.com/adilazahiraa/text-mining-sentiment-analysis",
+                },
+              ],
+            },
           ].map((project, i) => (
-
             <div
               key={i}
-              className="group relative p-6 rounded-2xl 
+              className={`group relative p-6 rounded-2xl 
               bg-[#1a1a1f] border border-white/10 
               hover:border-[#889063]/40 
               transition duration-300 
-              hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
+              hover:-translate-y-2 
+              hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)]
+              flex flex-col h-full overflow-hidden
+              ${i === 4 ? "md:col-span-2 md:max-w-[520px] md:mx-auto" : ""}`}
             >
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
+                <div className="absolute -top-10 -right-10 w-52 h-52 bg-[#889063]/10 blur-3xl rounded-full"></div>
+              </div>
 
-              {/* IMAGE */}
               <div className="relative mb-6 overflow-hidden rounded-xl">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-52 md:h-56 object-cover rounded-xl 
-                  transition duration-500 group-hover:scale-105"
+                  className="w-full h-52 md:h-56 object-cover rounded-xl transition duration-500 group-hover:scale-105"
                 />
 
-                {/* overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
               </div>
 
-              {/* HEADER */}
-              <div className="flex items-start justify-between gap-4 mb-4">
-
+              <div className="relative z-10 flex items-start justify-between gap-4 mb-4">
                 <h3 className="text-lg md:text-xl font-semibold text-[#f5f5f4] leading-snug">
                   {project.title}
                 </h3>
 
                 {project.badge && (
-                  <span className="shrink-0 text-[11px] px-3 py-1 rounded-full 
-                    bg-[#889063]/20 text-[#dbe4b2] border border-[#889063]/30">
+                  <span className="shrink-0 text-[11px] px-3 py-1 rounded-full bg-[#889063]/20 text-[#dbe4b2] border border-[#889063]/30">
                     {project.badge}
                   </span>
                 )}
-
               </div>
 
-              {/* DESC */}
-              <p className="text-[#bdb5a8] text-sm leading-relaxed">
+              <p className="relative z-10 text-[#bdb5a8] text-sm leading-relaxed">
                 {project.desc}
               </p>
 
-              {/* TAGS */}
-              <div className="flex flex-wrap gap-2 mt-5">
+              <div className="relative z-10 flex flex-wrap gap-2 mt-5">
                 {project.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="text-xs px-3 py-1 rounded-md 
-                    bg-[#2a2a30] text-[#e7e5e4] border border-white/10"
+                    className="text-xs px-3 py-1 rounded-md bg-[#2a2a30] text-[#e7e5e4] border border-white/10 transition duration-300 hover:bg-[#889063]/10 hover:border-[#889063]/30"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              {/* BUTTON */}
-              <div className="flex gap-3 mt-6 flex-wrap">
+              <div className="relative z-10 flex gap-3 mt-auto pt-6 flex-wrap">
                 {project.links.map((link, idx) => (
                   <a
                     key={idx}
@@ -627,13 +803,9 @@ const skills = [
                   </a>
                 ))}
               </div>
-
             </div>
-
           ))}
-
         </div>
-
       </section>
       
       {/* 💼 EXPERIENCE */}
@@ -892,7 +1064,7 @@ const skills = [
 
           {/* DESC */}
           <p className="text-[#bdb5a8] text-sm mt-2">
-            Fullstack Web Developer  •  Software Engineer  •  Data & QA Enthusiast
+            Software Engineer  •  Fullstack Developer  •  QA Enthusiast
           </p>
 
           {/* LINKS */}
