@@ -148,7 +148,7 @@ const skills = [
               transition={{ duration: 0.6 }}
               className="absolute 
                         left-[10%] md:left-[20%]
-                        top-[-50px] md:top-[-75px]
+                        top-[-40px] md:top-[-65px]
                         z-20
                         text-5xl md:text-7xl 
                         font-semibold 
