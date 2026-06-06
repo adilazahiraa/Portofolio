@@ -205,7 +205,26 @@ function TechStack({ t }) {
           "
         >
           {/* MARQUEE */}
-          <div className="marquee flex gap-3 py-3 sm:gap-4 md:gap-7 md:py-5">
+          <motion.div
+          drag="x"
+          dragConstraints={{
+            left: -1000,
+            right: 0,
+          }}
+          dragElastic={0.08}
+          whileTap={{ cursor: "grabbing" }}
+          className="
+            marquee
+            flex
+            gap-3
+            py-3
+            cursor-grab
+            select-none
+            sm:gap-4
+            md:gap-7
+            md:py-5
+          "
+        >
             {[...skills, ...skills].map((skill, i) => (
               <motion.div
                 key={i}
@@ -270,7 +289,7 @@ function TechStack({ t }) {
                 <span className="relative z-10">{skill}</span>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </motion.div>
 
