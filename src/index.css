@@ -78,6 +78,41 @@ html {
   animation: marquee 25s linear infinite;
 }
 
+.marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-reverse {
+  animation: marquee-reverse 30s linear infinite;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
