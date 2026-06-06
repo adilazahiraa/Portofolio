@@ -1,4 +1,4 @@
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, useMotionValue } from "framer-motion";
 import { useEffect } from "react";
 
 const skills = [
@@ -85,17 +85,18 @@ function SkillChip({ skill }) {
 function TechStack({ t }) {
 
     const controls = useAnimation();
+    const x = useMotionValue(0);
 
     useEffect(() => {
       controls.start({
-        x: ["0%", "-50%"],
+        x: -2000,
         transition: {
-          duration: 28,
+          duration: 40,
           repeat: Infinity,
           ease: "linear",
         },
       });
-    }, [controls]);
+    }, []);
 
   return (
     <section
@@ -290,20 +291,10 @@ function TechStack({ t }) {
         <div className="md:hidden overflow-hidden">
           <motion.div
             drag="x"
+            style={{ x }}
             dragElastic={0.05}
             whileTap={{ cursor: "grabbing" }}
             onDragStart={() => controls.stop()}
-            onDragEnd={() => {
-              controls.start({
-                x: ["0%", "-50%"],
-                transition: {
-                  duration: 28,
-                  repeat: Infinity,
-                  ease: "linear",
-                },
-              });
-            }}
-            animate={controls}
             className="
               flex
               gap-3
