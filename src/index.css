@@ -3,88 +3,48 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-h1, h2 {
-  font-family: 'Poppins', sans-serif;
+h1,
+h2 {
+  font-family: "Poppins", sans-serif;
   letter-spacing: -1px;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 18s linear infinite;
-}
-
-.marquee:hover {
-  animation-play-state: paused;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-.particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-
-  background: radial-gradient(circle, #c8b79f 40%, transparent 70%);
-  border-radius: 9999px;
-
-  opacity: 0.8;
-
-  animation: floatUp 6s linear infinite;
-
-  filter: blur(0.3px);
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(0px) scale(0.8);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateY(-100px) scale(1);
-  }
-  100% {
-    transform: translateY(-220px) scale(0.8);
-    opacity: 0;
-  }
-}
-
-.particle {
-  background: brown;
-  width: 8px;
-  height: 8px;
-}
+/* =========================
+   MARQUEE
+========================= */
 
 .marquee {
   display: flex;
   width: max-content;
-  animation: marquee 25s linear infinite;
 }
 
-.marquee {
+.marquee-auto {
   animation: marquee 28s linear infinite;
 }
 
-.marquee-reverse {
-  animation: marquee-reverse 30s linear infinite;
+.marquee-auto:hover {
+  animation-play-state: paused;
 }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* =========================
+   HIDE SCROLLBAR
+========================= */
 
 .scrollbar-none::-webkit-scrollbar {
   display: none;
@@ -95,29 +55,38 @@ html {
   scrollbar-width: none;
 }
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+/* =========================
+   PARTICLES
+========================= */
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: brown;
+  border-radius: 9999px;
+  opacity: 0.8;
+  filter: blur(0.3px);
+
+  animation: floatUp 6s linear infinite;
 }
 
-@keyframes marquee-reverse {
-  from {
-    transform: translateX(-50%);
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px) scale(0.8);
+    opacity: 0;
   }
-  to {
-    transform: translateX(0);
-  }
-}
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
+  20% {
+    opacity: 0.8;
   }
-  to {
-    transform: translateX(-50%);
+
+  50% {
+    transform: translateY(-100px) scale(1);
+  }
+
+  100% {
+    transform: translateY(-220px) scale(0.8);
+    opacity: 0;
   }
 }

@@ -15,6 +15,72 @@ const skills = [
   "Machine Learning", "Data Analysis"
 ];
 
+function SkillChip({ skill }) {
+  return (
+    <motion.div
+      whileHover={{
+        y: -7,
+        scale: 1.045,
+      }}
+      whileTap={{ scale: 0.97 }}
+      transition={{
+        type: "spring",
+        stiffness: 190,
+        damping: 16,
+      }}
+      className="
+        group
+        relative
+        min-w-max
+        overflow-hidden
+        rounded-full
+        border
+        border-[#E8D5C1]/90
+        bg-[#F7EFE3]
+        px-4
+        py-2.5
+        font-manrope
+        text-[12px]
+        font-semibold
+        tracking-[0.01em]
+        text-[#3A2421]
+        shadow-[0_12px_30px_rgba(18,9,5,0.18)]
+        transition-all
+        duration-300
+        hover:border-[#D5B893]
+        hover:bg-[#241614]
+        hover:text-[#F7EFE3]
+        hover:shadow-[0_18px_42px_rgba(18,9,5,0.32)]
+        sm:px-5
+        sm:py-3
+        sm:text-[13px]
+        md:px-8
+        md:py-3.5
+        md:text-[16px]
+        md:shadow-[0_18px_42px_rgba(18,9,5,0.20)]
+      "
+    >
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          rounded-full
+          bg-gradient-to-b
+          from-white/60
+          via-transparent
+          to-[#D5B893]/10
+          opacity-75
+          transition
+          group-hover:opacity-20
+        "
+      />
+
+      <span className="relative z-10">{skill}</span>
+    </motion.div>
+  );
+}
+
 function TechStack({ t }) {
   return (
     <section
@@ -204,92 +270,31 @@ function TechStack({ t }) {
             md:shadow-[0_30px_90px_rgba(18,9,5,0.28)]
           "
         >
-          {/* MARQUEE */}
-          <motion.div
-          drag="x"
-          dragConstraints={{
-            left: -1000,
-            right: 0,
-          }}
-          dragElastic={0.08}
-          whileTap={{ cursor: "grabbing" }}
-          className="
-            marquee
-            flex
-            gap-3
-            py-3
-            cursor-grab
-            select-none
-            sm:gap-4
-            md:gap-7
-            md:py-5
-          "
-        >
-            {[...skills, ...skills].map((skill, i) => (
-              <motion.div
-                key={i}
-                whileHover={{
-                  y: -7,
-                  scale: 1.045,
-                }}
-                whileTap={{ scale: 0.97 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 190,
-                  damping: 16,
-                }}
-                className="
-                  group
-                  relative
-                  min-w-max
-                  overflow-hidden
-                  rounded-full
-                  border
-                  border-[#E8D5C1]/90
-                  bg-[#F7EFE3]
-                  px-4
-                  py-2.5
-                  font-manrope
-                  text-[12px]
-                  font-semibold
-                  tracking-[0.01em]
-                  text-[#3A2421]
-                  shadow-[0_12px_30px_rgba(18,9,5,0.18)]
-                  transition-all
-                  duration-300
-                  hover:border-[#D5B893]
-                  hover:bg-[#241614]
-                  hover:text-[#F7EFE3]
-                  hover:shadow-[0_18px_42px_rgba(18,9,5,0.32)]
-                  sm:px-5
-                  sm:py-3
-                  sm:text-[13px]
-                  md:px-8
-                  md:py-3.5
-                  md:text-[16px]
-                  md:shadow-[0_18px_42px_rgba(18,9,5,0.20)]
-                "
-              >
-                <div
-                  className="
-                    pointer-events-none
-                    absolute
-                    inset-0
-                    rounded-full
-                    bg-gradient-to-b
-                    from-white/60
-                    via-transparent
-                    to-[#D5B893]/10
-                    opacity-75
-                    transition
-                    group-hover:opacity-20
-                  "
-                />
-
-                <span className="relative z-10">{skill}</span>
-              </motion.div>
+          {/* MOBILE - MANUAL SWIPE */}
+          <div
+            className="
+              flex
+              gap-3
+              overflow-x-auto
+              scrollbar-none
+              px-1
+              py-3
+              md:hidden
+            "
+          >
+            {skills.map((skill, i) => (
+              <SkillChip key={i} skill={skill} />
             ))}
-          </motion.div>
+          </div>
+
+          {/* DESKTOP - AUTO MARQUEE */}
+          <div className="hidden overflow-hidden md:block">
+            <div className="marquee marquee-auto flex gap-7 py-5">
+              {[...skills, ...skills].map((skill, i) => (
+                <SkillChip key={i} skill={skill} />
+              ))}
+            </div>
+          </div>
         </motion.div>
       </motion.div>
 
