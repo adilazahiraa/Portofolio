@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 
 const skills = [
   "C#", "ASP.NET Core",
@@ -82,6 +83,20 @@ function SkillChip({ skill }) {
 }
 
 function TechStack({ t }) {
+
+    const controls = useAnimation();
+
+    useEffect(() => {
+      controls.start({
+        x: ["0%", "-50%"],
+        transition: {
+          duration: 28,
+          repeat: Infinity,
+          ease: "linear",
+        },
+      });
+    }, [controls]);
+
   return (
     <section
       id="techstack"
@@ -271,23 +286,58 @@ function TechStack({ t }) {
           "
         >
 
-          {/* MOBILE - AUTO MARQUEE + BISA DI-SWIPE AREA */}
-          <div className="md:hidden overflow-hidden">
-            <div className="marquee marquee-auto flex gap-3 py-3">
-              {[...skills, ...skills].map((skill, i) => (
-                <SkillChip key={i} skill={skill} />
-              ))}
-            </div>
-          </div>
-          
-          {/* DESKTOP - AUTO MARQUEE */}
-          <div className="hidden overflow-hidden md:block">
-            <div className="marquee marquee-auto flex gap-7 py-5">
-              {[...skills, ...skills].map((skill, i) => (
-                <SkillChip key={i} skill={skill} />
-              ))}
-            </div>
-          </div>
+        {/* MOBILE - AUTO MARQUEE + BISA DRAG */}
+        <div className="md:hidden overflow-hidden">
+          <motion.div
+            drag="x"
+            dragElastic={0.05}
+            whileTap={{ cursor: "grabbing" }}
+            onDragStart={() => controls.stop()}
+            onDragEnd={() => {
+              controls.start({
+                x: ["0%", "-50%"],
+                transition: {
+                  duration: 28,
+                  repeat: Infinity,
+                  ease: "linear",
+                },
+              });
+            }}
+            animate={controls}
+            className="
+              flex
+              gap-3
+              py-3
+              cursor-grab
+              select-none
+              w-max
+            "
+          >
+            {[...skills, ...skills].map((skill, i) => (
+              <SkillChip key={i} skill={skill} />
+            ))}
+          </motion.div>
+        </div>
+
+        {/* DESKTOP - AUTO MARQUEE */}
+        <div className="hidden overflow-hidden md:block">
+          <motion.div
+            animate={{
+              x: ["0%", "-50%"],
+            }}
+            transition={{
+              duration: 28,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            className="flex gap-7 py-5 w-max"
+          >
+            {[...skills, ...skills].map((skill, i) => (
+              <SkillChip key={i} skill={skill} />
+            ))}
+          </motion.div>
+        </div>
+
         </motion.div>
       </motion.div>
 

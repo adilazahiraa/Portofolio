@@ -17,38 +17,6 @@ html {
 }
 
 /* =========================
-   MARQUEE
-========================= */
-
-.marquee {
-  display: flex;
-  width: max-content;
-}
-
-.marquee-auto {
-  animation: marquee 28s linear infinite;
-}
-
-.marquee-auto:hover {
-  animation-play-state: paused;
-}
-
-@media (max-width: 768px) {
-  .marquee-auto {
-    animation-duration: 40s;
-  }
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* =========================
    HIDE SCROLLBAR
 ========================= */
 
