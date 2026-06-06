@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { content } from "./data/content";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -9,50 +10,52 @@ import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
-import ContactModal from "./components/ContactModal";
 import CvModal from "./components/CvModal";
+import Contact from "./components/Contact";
 
 function App() {
+  const [language, setLanguage] = useState("en");
   const [openMenu, setOpenMenu] = useState(false);
   const [openContact, setOpenContact] = useState(false);
   const [openCV, setOpenCV] = useState(false);
 
-  return (
-    <div className="relative z-10 min-h-screen font-poppins overflow-hidden text-[#3B2F28] bg-[linear-gradient(135deg,#FAF9F6_0%,#F4F1EA_18%,#E6DAC8_42%,#CBB9A4_70%,#A48D78_100%)]">
+  const t = content[language];
 
+  return (
+    <>
       <Navbar
+        language={language}
+        setLanguage={setLanguage}
+        t={t}
         openMenu={openMenu}
         setOpenMenu={setOpenMenu}
         setOpenContact={setOpenContact}
       />
 
-      <Hero setOpenCV={setOpenCV} />
-
-      <About />
-
-      <SoftSkills />
-
-      <TechStack />
-
-      <Certifications />
-
-      <Projects />
-
-      <Experience />
-
-      <Footer />
+      <Hero t={t} setOpenCV={setOpenCV} />
+      <About t={t} />
+      <SoftSkills t={t} />
+      <TechStack t={t} />
+      <Certifications t={t} />
+      <Projects t={t} />
+      <Experience t={t} />
+      <Footer t={t} />
 
       <CvModal
         open={openCV}
         onClose={() => setOpenCV(false)}
+        t={t}
+        language={language}
       />
 
-      <ContactModal
+      <Contact
         open={openContact}
         onClose={() => setOpenContact(false)}
+        t={t}
+        language={language}
       />
 
-    </div>
+    </>
   );
 }
 

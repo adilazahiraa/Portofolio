@@ -15,7 +15,7 @@ const skills = [
   "Machine Learning", "Data Analysis"
 ];
 
-function TechStack() {
+function TechStack({ t }) {
   return (
     <section
       id="techstack"
@@ -74,7 +74,7 @@ function TechStack() {
           md:text-[198px]
         "
       >
-        STACK
+        {t.techStack.bgText}
       </motion.h1>
 
       {/* THIN EDITORIAL LINES */}
@@ -113,7 +113,7 @@ function TechStack() {
           <span className="h-px w-9 bg-[#D5B893]/70 sm:w-12" />
 
           <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.28em] text-[#D5B893] sm:text-[11px] sm:tracking-[0.36em]">
-            Tools I Work With
+            {t.techStack.label}
           </p>
 
           <span className="h-px w-9 bg-[#D5B893]/70 sm:w-12" />
@@ -143,7 +143,7 @@ function TechStack() {
             md:text-[82px]
           "
         >
-          Tech Stack
+          {t.techStack.title}
         </motion.h2>
 
         <motion.p
@@ -171,8 +171,7 @@ function TechStack() {
             md:text-[15px]
           "
         >
-          A curated selection of technologies I use to craft polished
-          interfaces, structured backends, and reliable digital experiences.
+          {t.techStack.desc}
         </motion.p>
 
         {/* WRAPPER */}

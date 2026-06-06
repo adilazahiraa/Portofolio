@@ -1,32 +1,7 @@
 import { motion } from "framer-motion";
 
-function SoftSkills() {
-  const softSkills = [
-    {
-      name: "Teamwork",
-      desc: "Able to collaborate and contribute effectively in a team environment.",
-    },
-    {
-      name: "Communication",
-      desc: "Clear in sharing ideas, asking questions, and discussing solutions.",
-    },
-    {
-      name: "Problem Solving",
-      desc: "Enjoy analyzing problems and finding structured solutions.",
-    },
-    {
-      name: "Critical Thinking",
-      desc: "Able to evaluate situations logically before making decisions.",
-    },
-    {
-      name: "Time Management",
-      desc: "Manage priorities and tasks to keep work organized.",
-    },
-    {
-      name: "Adaptability",
-      desc: "Open to learning new tools, workflows, and environments.",
-    },
-  ];
+function SoftSkills({ t }) {
+  const softSkills = t.softSkills.items;
 
   return (
     <section
@@ -74,7 +49,7 @@ function SoftSkills() {
           md:text-[150px]
         "
       >
-        SOFT SKILLS
+        {t.softSkills.bgText}
       </motion.h1>
 
       <div className="relative z-10 mx-auto max-w-[1200px] px-6 sm:px-8 md:px-20">
@@ -93,7 +68,7 @@ function SoftSkills() {
             <span className="h-px w-10 bg-[#B8956A] sm:w-12" />
 
             <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.28em] text-[#B8956A] sm:text-[11px] sm:tracking-[0.34em]">
-              Personal Strength
+              {t.softSkills.label}
             </p>
           </div>
 
@@ -109,12 +84,11 @@ function SoftSkills() {
               md:text-[76px]
             "
           >
-            Soft Skills.
+            {t.softSkills.title}
           </h2>
 
           <p className="mx-auto mt-5 max-w-[520px] font-manrope text-[13.5px] leading-7 text-[#4A2C2A]/68 sm:text-[14px] md:mx-0 md:mt-6 md:max-w-2xl md:text-[15px]">
-            Skills that shape the way I collaborate, communicate, and solve
-            problems while building reliable digital products.
+            {t.softSkills.desc}
           </p>
         </motion.div>
 

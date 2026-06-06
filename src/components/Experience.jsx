@@ -1,66 +1,19 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-function Experience() {
+function Experience({ t }) {
   const [activeTab, setActiveTab] = useState("internship");
 
   const tabs = [
-    { id: "internship", label: "Internship" },
-    { id: "organization", label: "Organization" },
-    { id: "committee", label: "Committee" },
+    { id: "internship", label: t.experience.tabs.internship },
+    { id: "organization", label: t.experience.tabs.organization },
+    { id: "committee", label: t.experience.tabs.committee },
   ];
 
   const experiences = {
-    internship: [
-      {
-        title: "Infrastructure Intern",
-        place: "Telkom Indonesia – Purwokerto",
-        date: "September – Oktober 2025",
-        desc: "Mendukung divisi infrastruktur dalam operasional harian melalui monitoring dan validasi data. Melakukan pengecekan data secara rutin untuk memastikan akurasi dan keandalan sistem, serta membantu pengelolaan data operasional guna menunjang performa infrastruktur.",
-      },
-      {
-        title: "IT Intern",
-        place: "Dinas Komunikasi dan Informatika Provinsi Jawa Tengah",
-        date: "Juli – Agustus 2024",
-        desc: "Mengembangkan modul admin pada sistem E-Pegawai berbasis web, termasuk pengelolaan data pegawai dan autentikasi pengguna. Berkontribusi dalam sistem manajemen aset, mengembangkan fitur Riwayat Servis, serta melakukan pengujian black-box dan perbaikan sistem.",
-      },
-    ],
-
-    organization: [
-      {
-        title: "HMIF UNSOED",
-        place: "Sekretaris Divisi PSDM",
-        date: "Maret – Desember 2023",
-        desc: "Bertanggung jawab dalam pengelolaan administrasi divisi, pembuatan laporan, surat-menyurat, dokumentasi kegiatan, penyusunan notulensi rapat, pengarsipan, koordinasi agenda kerja, evaluasi staf, serta mendukung komunikasi internal.",
-      },
-    ],
-
-    committee: [
-      {
-        title: "Staff Divisi Acara",
-        place: "Maskrab Makrab (MM)",
-        date: "2023–2024 & 2024–2025",
-        desc: "Bertanggung jawab dalam penyusunan konsep acara dan alur kegiatan untuk mendukung pelaksanaan orientasi mahasiswa baru.",
-      },
-      {
-        title: "Staff Divisi Acara",
-        place: "Informatics Championship (IC)",
-        date: "2022 & 2023",
-        desc: "Berperan dalam pengaturan teknis dan penyusunan alur kegiatan, khususnya dalam mendukung pelaksanaan lomba di bidang olahraga dan seni.",
-      },
-      {
-        title: "Staff Divisi Acara",
-        place: "Pemilihan Raya (Pemira)",
-        date: "2023 & 2024",
-        desc: "Terlibat dalam penyusunan alur kegiatan serta pengembangan program perhitungan suara untuk mendukung proses pemilihan ketua himpunan.",
-      },
-      {
-        title: "Bendahara",
-        place: "Soedirman Technophoria (S-Tech)",
-        date: "2023",
-        desc: "Mengelola pemasukan dan pengeluaran dana kegiatan serta memastikan pengelolaan keuangan berjalan secara tertib dan terstruktur.",
-      },
-    ],
+    internship: t.experience.internship,
+    organization: t.experience.organization,
+    committee: t.experience.committee,
   };
 
   return (
@@ -111,7 +64,7 @@ function Experience() {
           md:text-[170px]
         "
       >
-        EXPERIENCE
+        {t.experience.bgText}
       </motion.h1>
 
       <div className="relative z-10 mx-auto max-w-[1200px]">
@@ -133,7 +86,7 @@ function Experience() {
             <span className="h-px w-10 bg-[#B8956A]/70 sm:w-12" />
 
             <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.28em] text-[#B8956A] sm:text-[11px] sm:tracking-[0.32em]">
-              Journey
+              {t.experience.label}
             </p>
           </div>
 
@@ -149,7 +102,7 @@ function Experience() {
               md:text-[88px]
             "
           >
-            Experience.
+            {t.experience.title}
           </h2>
         </motion.div>
 

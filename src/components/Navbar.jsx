@@ -1,16 +1,23 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-function Navbar({ openMenu, setOpenMenu, setOpenContact }) {
+function Navbar({
+    language,
+    setLanguage,
+    t,
+    openMenu,
+    setOpenMenu,
+    setOpenContact,
+  }) {
   const [theme, setTheme] = useState("light");
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
   const menuItems = [
-    { label: "Home", href: "#home", id: "home" },
-    { label: "About", href: "#about", id: "about" },
-    { label: "Projects", href: "#projects", id: "projects" },
-    { label: "Experience", href: "#experience", id: "experience" },
+    { label: t.nav.home, href: "#home", id: "home" },
+    { label: t.nav.about, href: "#about", id: "about" },
+    { label: t.nav.projects, href: "#projects", id: "projects" },
+    { label: t.nav.experience, href: "#experience", id: "experience" },
   ];
 
   useEffect(() => {
@@ -286,9 +293,40 @@ function Navbar({ openMenu, setOpenMenu, setOpenContact }) {
               }
             `}
           >
-            Contact
+            {t.nav.contact}
           </motion.button>
         </motion.div>
+
+        <div className="flex items-center rounded-full border border-[#F3E6D4]/18 bg-[#FBF6EE]/6 p-1 backdrop-blur-xl">
+          {["en", "id"].map((item) => (
+            <button
+              key={item}
+              type="button"
+              onClick={() => setLanguage(item)}
+              className={`
+                rounded-full
+                px-3
+                py-1.5
+                font-manrope
+                text-[11px]
+                font-bold
+                uppercase
+                transition
+                ${
+                  language === item
+                    ? darkMode
+                      ? "bg-[#F3E6D4] text-[#120905]"
+                      : "bg-[#4A2C2A] text-[#F7EFE3]"
+                    : darkMode
+                    ? "text-[#FBF6EE]/65"
+                    : "text-[#4A2C2A]/55"
+                }
+              `}
+            >
+              {item}
+            </button>
+          ))}
+        </div>      
 
         {/* MOBILE BUTTON */}
         <motion.button

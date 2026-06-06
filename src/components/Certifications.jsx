@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-function Certifications() {
+function Certifications({ t }) {
   const tags = [
     "ASP.NET Core",
     "REST API",
@@ -54,7 +54,7 @@ function Certifications() {
           md:text-[150px]
         "
       >
-        CERTIFICATION
+        {t.certifications.bgText}
       </motion.h1>
 
       <div className="relative z-10 mx-auto max-w-[1100px]">
@@ -88,26 +88,29 @@ function Certifications() {
             <span className="h-px w-10 bg-[#B8956A] sm:w-12" />
 
             <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.26em] text-[#B8956A] sm:text-[11px] sm:tracking-[0.34em]">
-              Professional Development
+              {t.certifications.label}
             </p>
           </div>
 
-          <h2
-            className="
-              font-syne
-              text-[40px]
-              font-bold
-              leading-[0.95]
-              tracking-[-0.06em]
-              text-[#2B1A18]
-              sm:text-[46px]
-              md:text-[76px]
-            "
-          >
-            Sertifikasi
-            <br />
-            & Pelatihan.
-          </h2>
+        <h2
+          className="
+            font-syne
+            text-[40px]
+            font-bold
+            leading-[0.95]
+            tracking-[-0.06em]
+            text-[#2B1A18]
+            sm:text-[46px]
+            md:text-[76px]
+          "
+        >
+          {t.certifications.title.split("\n").map((line) => (
+            <span key={line}>
+              {line}
+              <br />
+            </span>
+          ))}
+        </h2>
         </motion.div>
 
         {/* CERTIFICATE CARD */}
@@ -179,7 +182,7 @@ function Certifications() {
 
               <div className="text-right md:mt-7 md:text-left">
                 <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.26em] text-[#B8956A] md:tracking-[0.3em]">
-                  Issued
+                  {t.certifications.issuedLabel}
                 </p>
 
                 <p className="mt-1 font-manrope text-sm font-semibold text-[#2B1A18] md:mt-2">
@@ -202,7 +205,7 @@ function Certifications() {
                   md:tracking-[0.28em]
                 "
               >
-                Microsoft via Coursera
+                {t.certifications.issuer}
               </p>
 
               <h3
@@ -219,11 +222,15 @@ function Certifications() {
                   md:text-[48px]
                 "
               >
-                Back-End Development
-                <br />
-                with .NET
+                {t.certifications.certificateName
+                  .split("\n")
+                  .map((line) => (
+                    <span key={line}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
               </h3>
-
               <p
                 className="
                   mt-5
@@ -238,11 +245,7 @@ function Certifications() {
                   md:leading-8
                 "
               >
-                Mempelajari pengembangan backend modern menggunakan C#,
-                ASP.NET Core, REST API Development, Entity Framework Core,
-                Authentication & Authorization, Dependency Injection,
-                Swagger/OpenAPI, Middleware, API Testing, serta integrasi
-                frontend dan backend.
+                {t.certifications.description}
               </p>
 
               {/* TAGS */}

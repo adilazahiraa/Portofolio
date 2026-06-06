@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
 
-function Footer() {
+function Footer({ t }) {
   const links = [
     {
-      label: "GitHub",
+      label: t.footer.links.github,
       href: "https://github.com/adilazahiraa",
     },
     {
-      label: "LinkedIn",
+      label: t.footer.links.linkedin,
       href: "https://linkedin.com/in/adilazahirahasyati",
     },
     {
-      label: "Email",
+      label: t.footer.links.email,
       href: "mailto:hasyatiadilazahira@gmail.com",
     },
   ];
@@ -64,7 +64,7 @@ function Footer() {
           md:text-[170px]
         "
       >
-        THANK YOU
+        {t.footer.bgText}
       </motion.h1>
 
       <div className="relative z-10 mx-auto max-w-6xl">
@@ -101,7 +101,7 @@ function Footer() {
               <span className="h-px w-10 bg-[#D5B893]/70 md:w-12" />
 
               <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.28em] text-[#D5B893] sm:text-[11px] sm:tracking-[0.32em]">
-                Let’s Connect
+                {t.footer.label}
               </p>
             </div>
 
@@ -121,9 +121,9 @@ function Footer() {
                 lg:text-[96px]
               "
             >
-              Let’s build
+              {t.footer.title.line1}
               <br />
-              something together.
+              {t.footer.title.line2}
             </h2>
           </div>
 
@@ -149,8 +149,7 @@ function Footer() {
                 md:leading-8
               "
             >
-              Thank you for visiting my portfolio. I’m open to discussing
-              opportunities, collaborations, and digital product ideas.
+              {t.footer.desc}
             </p>
 
             <div
@@ -169,8 +168,12 @@ function Footer() {
                 <motion.a
                   key={item.label}
                   href={item.href}
-                  target={item.label === "Email" ? undefined : "_blank"}
-                  rel={item.label === "Email" ? undefined : "noopener noreferrer"}
+                  target={item.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={
+                    item.href.startsWith("mailto:")
+                      ? undefined
+                      : "noopener noreferrer"
+                  }
                   whileHover={{ y: -3 }}
                   whileTap={{ scale: 0.97 }}
                   className={`
@@ -224,12 +227,12 @@ function Footer() {
             </h3>
 
             <p className="mt-2 font-manrope text-sm text-[#FBF6EE]/48">
-              Front-End Developer • Full Stack Developer • Web Designer
+              {t.footer.role}
             </p>
           </div>
 
           <p className="font-manrope text-sm text-[#FBF6EE]/35">
-            © {new Date().getFullYear()} Adila. All rights reserved.
+            © {new Date().getFullYear()} Adila. {t.footer.copyright}
           </p>
         </div>
       </div>

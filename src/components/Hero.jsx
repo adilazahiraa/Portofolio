@@ -18,7 +18,7 @@ const textContainer = {
   },
 };
 
-function Hero({ setOpenCV }) {
+function Hero({ setOpenCV, t }) {
   return (
     <section
       id="home"
@@ -97,8 +97,8 @@ function Hero({ setOpenCV }) {
           flex flex-col md:flex-row items-center justify-between
           px-6 md:px-20 md:pl-20 lg:pl-28
           min-h-screen
-          pt-20 md:pt-36 pb-24 md:pb-32
-          gap-12 md:gap-16 max-w-[1400px] mx-auto overflow-visible
+          pt-28 md:pt-36 pb-24 md:pb-32
+          gap-12 md:gap-16 max-w-[1400px] mr-auto ml-0 overflow-visible
         "
       >
         {/* TEXT */}
@@ -110,38 +110,42 @@ function Hero({ setOpenCV }) {
           className="
             flex-1 w-full relative z-10 mt-16 md:mt-24
             text-center md:text-left
-            mx-auto md:mx-0 md:ml-4 lg:ml-8
+            mx-auto md:mx-0 md:ml-10 lg:ml-16
           "
         >
-          <div className="space-y-6 flex flex-col items-center md:items-start relative w-full">
-            {/* HALO */}
-            <motion.h2
-              initial={{ opacity: 0, rotate: 3 }}
-              animate={{ opacity: 1, rotate: 3 }}
-              whileHover={{ scale: 1.04, rotate: 1 }}
-              transition={{ duration: 0.6 }}
-              className="
-                absolute
-                left-[10%] md:left-[20%]
-                top-[-40px] md:top-[-65px]
-                z-20
-                font-syne
-                text-5xl md:text-7xl
-                font-bold
-                text-transparent
-                bg-clip-text
-                bg-gradient-to-r
-                from-[#FBF6EE]
-                via-[#D5B893]
-                to-[#FBF6EE]
-                tracking-[-0.06em]
-                rotate-[4deg]
-                whitespace-nowrap
-                drop-shadow-[0_10px_28px_rgba(18,9,5,0.28)]
-              "
-            >
-              Halo! Saya
-            </motion.h2>
+
+        <div className="space-y-6 flex flex-col items-center md:items-start relative w-full">
+
+          <div className="relative inline-block">
+            
+          {/* HALO */}
+          <motion.h2
+            initial={{ opacity: 0, rotate: 3 }}
+            animate={{ opacity: 1, rotate: 3 }}
+            whileHover={{ scale: 1.04, rotate: 1 }}
+            transition={{ duration: 0.6 }}
+            className="
+              absolute
+              left-[53px] sm:left-[70px] md:left-[25%]
+              top-[-60px] md:top-[-96px]
+              z-20
+              font-syne
+              text-5xl md:text-7xl
+              font-bold
+              text-transparent
+              bg-clip-text
+              bg-gradient-to-r
+              from-[#FBF6EE]
+              via-[#D5B893]
+              to-[#FBF6EE]
+              tracking-[-0.06em]
+              rotate-[4deg]
+              whitespace-nowrap
+              drop-shadow-[0_10px_28px_rgba(18,9,5,0.28)]
+            "
+          >
+            {t.hero.greeting}
+          </motion.h2>
 
             {/* NAME */}
             <motion.div
@@ -152,6 +156,7 @@ function Hero({ setOpenCV }) {
               transition={{ delay: 0.2, duration: 0.6 }}
               className="
                 relative inline-block
+                md:ml-11
                 px-6 md:px-10 py-4
                 rounded-[1.35rem]
                 border border-[#FBF6EE]/75
@@ -186,7 +191,10 @@ function Hero({ setOpenCV }) {
                 Adila Zahira Hasyati
               </h1>
             </motion.div>
+
           </div>
+          
+        </div>
 
           {/* ROLE */}
           <motion.p
@@ -205,7 +213,7 @@ function Hero({ setOpenCV }) {
             tracking-[0.01em]
             "
           >
-            Front-End Developer | Full Stack Developer | Web Designer
+            {t.hero.role}
           </motion.p>
 
           {/* BUTTONS */}
@@ -239,7 +247,7 @@ function Hero({ setOpenCV }) {
                 duration-300
               "
             >
-              Lihat Project
+              {t.hero.projectButton}
             </motion.button>
 
             <motion.a
@@ -263,7 +271,7 @@ function Hero({ setOpenCV }) {
               transition-all duration-300
               "
             >
-              LinkedIn
+              {t.hero.linkedinButton}
             </motion.a>
 
             <motion.button
@@ -286,7 +294,7 @@ function Hero({ setOpenCV }) {
               transition-all duration-300
               "
             >
-              Download CV
+              {t.hero.cvButton}
             </motion.button>
           </div>
         </motion.div>

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import profile2 from "../assets/profile2.jpg";
 
-function About() {
+function About({ t }) {
   return (
     <section
       id="about"
@@ -48,7 +48,7 @@ function About() {
           md:text-[130px]
         "
       >
-        ABOUT
+        {t.about.bgText}
       </motion.h1>
 
       <motion.div
@@ -143,7 +143,7 @@ function About() {
                 sm:tracking-[0.32em]
               "
             >
-              About Me
+              {t.about.label}
             </p>
           </div>
 
@@ -160,9 +160,12 @@ function About() {
               lg:text-[72px]
             "
           >
-            Tentang
-            <br />
-            Saya.
+            {t.about.title.split("\n").map((line) => (
+              <span key={line}>
+                {line}
+                <br />
+              </span>
+            ))}
           </h2>
 
           <div
@@ -181,37 +184,11 @@ function About() {
               lg:mx-0
             "
           >
-            <p>
-              Saya adalah{" "}
-              <span className="font-semibold text-[#F3DFC2]">
-                fresh graduate Informatika
-              </span>{" "}
-              yang berfokus pada pengembangan website modern, mulai dari
-              tampilan antarmuka, implementasi fitur, hingga integrasi backend.
-            </p>
+            <p>{t.about.p1}</p>
 
-            <p>
-              Berpengalaman membangun aplikasi web menggunakan React.js,
-              ASP.NET Core, Laravel, dan PostgreSQL melalui project akademik,
-              personal project, serta pengalaman magang.
-            </p>
+            <p>{t.about.p2}</p>
 
-            <p>
-              Saat ini saya tertarik pada{" "}
-              <span className="font-semibold text-[#F3DFC2]">
-                Front-End Development
-              </span>
-              ,{" "}
-              <span className="font-semibold text-[#F3DFC2]">
-                Full Stack Development
-              </span>
-              , dan{" "}
-              <span className="font-semibold text-[#F3DFC2]">
-                Web Design
-              </span>{" "}
-              untuk menciptakan website yang responsif, fungsional, dan nyaman
-              digunakan.
-            </p>
+            <p>{t.about.p3}</p>
           </div>
 
           <div className="mt-7 flex flex-wrap justify-center gap-2.5 sm:gap-3 lg:justify-start">
