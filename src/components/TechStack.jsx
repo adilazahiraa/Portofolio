@@ -1,5 +1,9 @@
-import { motion, useAnimation, useMotionValue } from "framer-motion";
-import { useEffect } from "react";
+import {
+  motion,
+  useAnimationFrame,
+  useMotionValue,
+} from "framer-motion";
+import { useRef } from "react";
 
 const skills = [
   "C#", "ASP.NET Core",
@@ -83,20 +87,23 @@ function SkillChip({ skill }) {
 }
 
 function TechStack({ t }) {
+  const x = useMotionValue(0);
+  const isDragging = useRef(false);
 
-    const controls = useAnimation();
-    const x = useMotionValue(0);
+  useAnimationFrame((_, delta) => {
+    if (isDragging.current) return;
 
-    useEffect(() => {
-      controls.start({
-        x: -2000,
-        transition: {
-          duration: 40,
-          repeat: Infinity,
-          ease: "linear",
-        },
-      });
-    }, []);
+    const speed = 0.04; // makin gede makin cepet
+    const currentX = x.get();
+    const nextX = currentX - delta * speed;
+
+    // reset halus pas udah jauh, biar loop terus
+    if (nextX <= -2000) {
+      x.set(0);
+    } else {
+      x.set(nextX);
+    }
+  });
 
   return (
     <section
@@ -287,14 +294,20 @@ function TechStack({ t }) {
           "
         >
 
-        {/* MOBILE - AUTO MARQUEE + BISA DRAG */}
+        {/* MOBILE - AUTO MARQUEE + DRAG TANPA RESET */}
         <div className="md:hidden overflow-hidden">
           <motion.div
             drag="x"
             style={{ x }}
-            dragElastic={0.05}
+            dragElastic={0.04}
+            dragMomentum={false}
+            onDragStart={() => {
+              isDragging.current = true;
+            }}
+            onDragEnd={() => {
+              isDragging.current = false;
+            }}
             whileTap={{ cursor: "grabbing" }}
-            onDragStart={() => controls.stop()}
             className="
               flex
               gap-3
