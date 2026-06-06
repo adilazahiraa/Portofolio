@@ -33,6 +33,12 @@ html {
   animation-play-state: paused;
 }
 
+@media (max-width: 768px) {
+  .marquee-auto {
+    animation-duration: 40s;
+  }
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);

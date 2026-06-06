@@ -270,23 +270,16 @@ function TechStack({ t }) {
             md:shadow-[0_30px_90px_rgba(18,9,5,0.28)]
           "
         >
-          {/* MOBILE - MANUAL SWIPE */}
-          <div
-            className="
-              flex
-              gap-3
-              overflow-x-auto
-              scrollbar-none
-              px-1
-              py-3
-              md:hidden
-            "
-          >
-            {skills.map((skill, i) => (
-              <SkillChip key={i} skill={skill} />
-            ))}
-          </div>
 
+          {/* MOBILE - AUTO MARQUEE + BISA DI-SWIPE AREA */}
+          <div className="md:hidden overflow-hidden">
+            <div className="marquee marquee-auto flex gap-3 py-3">
+              {[...skills, ...skills].map((skill, i) => (
+                <SkillChip key={i} skill={skill} />
+              ))}
+            </div>
+          </div>
+          
           {/* DESKTOP - AUTO MARQUEE */}
           <div className="hidden overflow-hidden md:block">
             <div className="marquee marquee-auto flex gap-7 py-5">
