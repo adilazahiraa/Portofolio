@@ -98,6 +98,11 @@ export const content = {
     swipe: "Geser untuk melihat",
     items: [
         {
+        title: "Muse & Brew",
+        desc: "Website company profile coffee shop yang dirancang untuk memperkenalkan brand, menampilkan menu, galeri, dan informasi bisnis dengan tampilan modern dan responsif.",
+        badge: "Front-End Developer",
+        },
+        {
         title: "JobTracker",
         desc: "Aplikasi web fullstack untuk mengelola lamaran kerja, jadwal interview, catatan, dan progress karier dalam satu workspace.",
         badge: "Fullstack Developer",
@@ -310,6 +315,11 @@ export const content = {
     desc: "A curated collection of web, backend, UI/UX, and data projects.",
     swipe: "Swipe to explore",
     items: [
+        {
+        title: "Muse & Brew",
+        desc: "A coffee shop company profile website designed to showcase brand identity, menu offerings, gallery, and business information through a modern and responsive user experience.",
+        badge: "Front-End Developer",
+        },
         {
         title: "JobTracker",
         desc: "A fullstack web application for managing job applications, interview schedules, notes, and career progress in one workspace.",

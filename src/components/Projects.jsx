@@ -5,8 +5,17 @@ import nutrition from "../assets/nutrition.png";
 import konser from "../assets/konser.png";
 import sosmed from "../assets/sosmed.png";
 import jobtracker from "../assets/jobtracker.png";
+import musebrew from "../assets/musebrew.png";
 
 const projectAssets = [
+  {
+    image: musebrew,
+    tags: ["React JS", "Tailwind CSS", "Framer Motion"],
+    links: [
+      { label: "Live Demo", url: "https://muse-and-brew-company-profile.vercel.app/" },
+      { label: "GitHub", url: "https://github.com/adilazahiraa/muse-and-brew-company-profile" },
+    ],
+  },
   {
     image: jobtracker,
     tags: ["React", "ASP.NET Core", "PostgreSQL", "Tailwind"],
