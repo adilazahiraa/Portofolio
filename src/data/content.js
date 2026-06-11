@@ -18,7 +18,7 @@ export const content = {
 
     hero: {
       greeting: "Halo! Saya",
-      role: "Front-End Developer | Full Stack Developer | Web Designer",
+      role: "Front-End Developer | Web Designer",
       projectButton: "Lihat Project",
       linkedinButton: "LinkedIn",
       cvButton: "Download CV",
@@ -31,12 +31,12 @@ export const content = {
     },
 
     about: {
-      bgText: "TENTANG",  
-      label: "Tentang Saya",
-      title: "Tentang\nSaya.",
-      p1: "Saya adalah fresh graduate Informatika yang berfokus pada pengembangan website modern, mulai dari tampilan antarmuka, implementasi fitur, hingga integrasi backend.",
-      p2: "Berpengalaman membangun aplikasi web menggunakan React.js, ASP.NET Core, Laravel, dan PostgreSQL melalui project akademik, personal project, serta pengalaman magang.",
-      p3: "Saat ini saya tertarik pada Front-End Development, Full Stack Development, dan Web Design untuk menciptakan website yang responsif, fungsional, dan nyaman digunakan.",
+    bgText: "TENTANG",
+    label: "Tentang Saya",
+    title: "Tentang\nSaya.",
+    p1: "Saya adalah fresh graduate Informatika yang berfokus pada Front-End Development dan Web Design.",
+    p2: "Berpengalaman mengembangkan website dan aplikasi web menggunakan React.js, Tailwind CSS, Bootstrap, JavaScript, HTML, dan CSS melalui berbagai project akademik, personal project, dan pengalaman magang.",
+    p3: "Saya tertarik menciptakan pengalaman digital yang modern, responsif, dan berfokus pada kebutuhan pengguna melalui perpaduan desain dan teknologi.",
     },
 
     softSkills: {
@@ -205,7 +205,7 @@ export const content = {
         "Terima kasih telah mengunjungi portofolio saya. Saya terbuka untuk peluang kerja, kolaborasi, maupun diskusi mengenai pengembangan produk digital.",
 
     role:
-        "Front-End Developer • Full Stack Developer • Web Designer",
+        "Front-End Developer • Web Designer",
 
     copyright: "Seluruh hak cipta dilindungi.",
 
@@ -236,7 +236,7 @@ export const content = {
 
     hero: {
       greeting: "Hello, I am",
-      role: "Front-End Developer | Full Stack Developer | Web Designer",
+      role: "Front-End Developer | Web Designer",
       projectButton: "View Projects",
       linkedinButton: "LinkedIn",
       cvButton: "Download CV",
@@ -249,12 +249,12 @@ export const content = {
     },
 
     about: {
-      bgText: "ABOUT",
-      label: "About Me",
-      title: "About\nMe.",
-      p1: "I am an Informatics fresh graduate focused on modern website development, from user interface design, feature implementation, to backend integration.",
-      p2: "Experienced in building web applications using React.js, ASP.NET Core, Laravel, and PostgreSQL through academic projects, personal projects, and internship experience.",
-      p3: "Currently interested in Front-End Development, Full Stack Development, and Web Design to create responsive, functional, and user-friendly websites.",
+    bgText: "ABOUT",
+    label: "About Me",
+    title: "About\nMe.",
+    p1: "I am an Informatics graduate focused on Front-End Development and Web Design.",
+    p2: "Experienced in building websites and web applications using React.js, Tailwind CSS, Bootstrap, JavaScript, HTML, and CSS through academic projects, personal projects, and internship experiences.",
+    p3: "Passionate about creating modern, responsive, and user-friendly digital experiences that combine creativity, design, and technology.",
     },
 
     softSkills: {
@@ -424,7 +424,7 @@ export const content = {
         "Thank you for visiting my portfolio. I am open to discussing career opportunities, collaborations, and digital product ideas.",
 
     role:
-        "Front-End Developer • Full Stack Developer • Web Designer",
+        "Front-End Developer • Web Designer",
 
     copyright: "All rights reserved.",
 
