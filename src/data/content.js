@@ -235,7 +235,7 @@ export const content = {
     },
 
     hero: {
-      greeting: "Hello, I am",
+      greeting: "Hello! I am",
       role: "Front-End Developer | Web Designer",
       projectButton: "View Projects",
       linkedinButton: "LinkedIn",

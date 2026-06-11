@@ -126,7 +126,7 @@ function Hero({ setOpenCV, t }) {
             transition={{ duration: 0.6 }}
             className="
               absolute
-              left-[53px] sm:left-[70px] md:left-[25%]
+              left-[53px] sm:left-[70px] md:left-[26%]
               top-[-60px] md:top-[-96px]
               z-20
               font-syne
@@ -209,7 +209,7 @@ function Hero({ setOpenCV, t }) {
             drop-shadow-[0_4px_12px_rgba(0,0,0,0.35)]
             mt-8
             text-center md:text-left
-            w-full md:ml-24
+            w-full md:ml-48
             tracking-[0.01em]
             "
           >
