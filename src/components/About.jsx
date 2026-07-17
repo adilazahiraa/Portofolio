@@ -193,10 +193,10 @@ function About({ t }) {
 
           <div className="mt-7 flex flex-wrap justify-center gap-2.5 sm:gap-3 lg:justify-start">
             {[
-                "React.js",
-                "JavaScript",
-                "Tailwind CSS",
-                "HTML & CSS"
+                "Python",
+                "SQL",
+                "Power BI",
+                "Microsoft Excel"
               ].map(
               (item) => (
                 <motion.span

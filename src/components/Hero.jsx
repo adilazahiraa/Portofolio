@@ -209,7 +209,7 @@ function Hero({ setOpenCV, t }) {
             drop-shadow-[0_4px_12px_rgba(0,0,0,0.35)]
             mt-8
             text-center md:text-left
-            w-full md:ml-48
+            w-full md:ml-36
             tracking-[0.01em]
             "
           >

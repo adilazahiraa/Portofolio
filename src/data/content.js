@@ -18,7 +18,7 @@ export const content = {
 
     hero: {
       greeting: "Halo! Saya",
-      role: "Front-End Developer | Web Designer",
+      role: "Data Analyst | Business Intelligence Enthusiast",
       projectButton: "Lihat Project",
       linkedinButton: "LinkedIn",
       cvButton: "Download CV",
@@ -34,9 +34,9 @@ export const content = {
     bgText: "TENTANG",
     label: "Tentang Saya",
     title: "Tentang\nSaya.",
-    p1: "Saya adalah fresh graduate Informatika yang berfokus pada Front-End Development dan Web Design.",
-    p2: "Berpengalaman mengembangkan website dan aplikasi web menggunakan React.js, Tailwind CSS, Bootstrap, JavaScript, HTML, dan CSS melalui berbagai project akademik, personal project, dan pengalaman magang.",
-    p3: "Saya tertarik menciptakan pengalaman digital yang modern, responsif, dan berfokus pada kebutuhan pengguna melalui perpaduan desain dan teknologi.",
+    p1: "Saya adalah lulusan Informatika yang memiliki minat di bidang Data Analyst dan Business Intelligence.",
+    p2: "Memiliki pengalaman dalam pengolahan, analisis, dan visualisasi data melalui proyek akademik, personal project, dan pengalaman magang.",
+    p3: "Saya tertarik mengubah data menjadi insight yang dapat mendukung pengambilan keputusan melalui analisis data, dashboard interaktif, dan visualisasi yang informatif.",
     },
 
     softSkills: {
@@ -76,56 +76,127 @@ export const content = {
     bgText: "STACK",
     label: "Tools yang Saya Gunakan",
     title: "Tech Stack",
-    desc: "Kumpulan teknologi yang saya gunakan untuk membangun antarmuka, backend, dan pengalaman digital yang reliable.",
+    desc: "Kumpulan tools yang saya gunakan untuk mengolah data, membangun dashboard interaktif, melakukan analisis, serta mendukung pengambilan keputusan berbasis data.",
     },
 
     certifications: {
     bgText: "SERTIFIKASI",
     label: "Pengembangan Profesional",
     title: "Sertifikasi\n& Pelatihan.",
-    issuedLabel: "Diterbitkan",
-    issuer: "Microsoft melalui Coursera",
-    certificateName: "Back-End Development\ndengan .NET",
-    description:
-        "Mempelajari pengembangan backend modern menggunakan C#, ASP.NET Core, REST API Development, Entity Framework Core, Authentication & Authorization, Dependency Injection, Swagger/OpenAPI, Middleware, API Testing, serta integrasi frontend dan backend.",
+
+    items: [
+        {
+        year: "2026",
+        issuer: "MySkill",
+        title: "Microsoft Excel\nIntermediate",
+
+        images: [
+            "/certificates/excel-lookup.png",
+            "/certificates/excel-pivot.png",
+            "/certificates/excel-chart.png",
+        ],
+
+        description:
+            "Mempelajari Microsoft Excel untuk analisis data, dashboard, Pivot Table, Lookup, serta visualisasi data.",
+
+        tags: [
+            "Excel",
+            "Pivot Table",
+            "Lookup",
+            "Dashboard",
+        ],
+        },
+
+        {
+        year: "2026",
+        issuer: "MySkill",
+        title: "Data Analytic\nin Power BI",
+
+        images: [
+            "/certificates/powerbi.png",
+        ],
+
+        description:
+            "Mempelajari data modelling, DAX, Power Query, serta dashboard interaktif.",
+
+        tags: [
+            "Power BI",
+            "Dashboard",
+            "DAX",
+        ],
+        },
+
+        {
+        year: "2026",
+        issuer: "DQLab",
+        title: "Fundamental SQL\nSeries",
+
+        images: [
+            "/certificates/sql-function-groupby.png",
+            "/certificates/sql-groupby-having.png",
+            "/certificates/sql-join-union.png",
+            "/certificates/sql-orderby.png",
+            "/certificates/sql-logical-operator.png",
+            "/certificates/sql-subquery.png",
+        ],
+
+        description:
+            "Mempelajari dasar SQL mulai dari SELECT, JOIN, GROUP BY hingga Subquery.",
+
+        tags: [
+            "SQL",
+            "JOIN",
+            "GROUP BY",
+            "Subquery",
+        ],
+        },
+
+        {
+        year: "2026",
+        issuer: "DQLab",
+        title: "Business Decision\nResearch",
+
+        images: [
+            "/certificates/business-decision.png",
+        ],
+
+        description:
+            "Mempelajari business analytics dan data-driven decision making.",
+
+        tags: [
+            "Business",
+            "Analytics",
+        ],
+        },
+    ],
     },
 
     projects: {
     bgText: "PROYEK",
     label: "Portofolio",
     title: "Project\nPilihan.",
-    desc: "Kumpulan project web, backend, UI/UX, dan data yang pernah saya kerjakan.",
+    desc: "Kumpulan project yang menunjukkan kemampuan saya dalam analisis data, business intelligence, machine learning, dan pengembangan sistem cerdas.",
     swipe: "Geser untuk melihat",
     items: [
         {
-        title: "Muse & Brew",
-        desc: "Website company profile coffee shop yang dirancang untuk memperkenalkan brand, menampilkan menu, galeri, dan informasi bisnis dengan tampilan modern dan responsif.",
-        badge: "Front-End Developer",
+        title: "Dashboard Penjualan Eksekutif SuperStores US",
+        desc: "Mengembangkan dashboard interaktif menggunakan Power BI untuk menganalisis performa penjualan, tren keuntungan, segmentasi pelanggan, dan insight regional dengan memanfaatkan Power Query, DAX, serta visualisasi data.",
+        badge: "Business Intelligence",
         },
         {
-        title: "JobTracker",
-        desc: "Aplikasi web fullstack untuk mengelola lamaran kerja, jadwal interview, catatan, dan progress karier dalam satu workspace.",
-        badge: "Fullstack Developer",
+        title: "Analisis & Prediksi Customer Churn Retail",
+        desc: "Membangun model machine learning untuk memprediksi customer churn melalui data preprocessing, exploratory data analysis (EDA), feature engineering, evaluasi model, dan predictive analytics menggunakan Python.",
+        badge: "Analisis Data",
         },
         {
-        title: "Nutritional Status Diagnosis System",
-        desc: "Aplikasi sistem pakar berbasis web untuk mendiagnosis status gizi dan memberikan rekomendasi secara personal.",
-        badge: "Fullstack Developer",
+        title: "Sistem Diagnosis Status Gizi",
+        desc: "Mengembangkan sistem pakar berbasis web menggunakan Flask, Fuzzy Logic, dan Decision Tree untuk mendiagnosis status gizi serta memberikan rekomendasi pola hidup sehat secara personal.",
+        badge: "Sistem Cerdas",
         },
         {
-        title: "KonserKita Ticketing System",
-        desc: "Platform pemesanan tiket konser berbasis web dengan antarmuka responsif, dashboard admin, dan pengalaman pengguna yang nyaman.",
-        badge: "UI/UX Designer",
-        },
-        {
-        title: "SOSMEDCARE Expert System",
-        desc: "Sistem pakar berbasis web dengan metode Backward Chaining untuk menganalisis tingkat kecanduan media sosial.",
-        badge: "Backend Developer",
-        },
-        {
-        title: "Indonesian Presidential Inauguration Sentiment Analysis",
-        desc: "Proyek data science untuk menganalisis sentimen masyarakat di platform X menggunakan preprocessing teks, TF-IDF, Naive Bayes, dan optimasi SMOTE.",
-        badge: "Data Science",
+        title: "Analisis Sentimen Pelantikan Presiden Indonesia",
+        desc: "Melakukan analisis sentimen terhadap opini masyarakat di platform X menggunakan text preprocessing, TF-IDF, Naive Bayes, dan SMOTE untuk mengklasifikasikan sentimen serta menghasilkan insight berbasis data.",
+        badge: "Machine Learning",
         },
     ],
     },
@@ -202,10 +273,10 @@ export const content = {
     },
 
     desc:
-        "Terima kasih telah mengunjungi portofolio saya. Saya terbuka untuk peluang kerja, kolaborasi, maupun diskusi mengenai pengembangan produk digital.",
+  "Terima kasih telah mengunjungi portofolio saya. Saya terbuka untuk peluang kerja, kolaborasi, maupun diskusi seputar analisis data, business intelligence, machine learning, dan pengambilan keputusan berbasis data.",
 
     role:
-        "Front-End Developer • Web Designer",
+        "Data Analyst | Business Intelligence Enthusiast",
 
     copyright: "Seluruh hak cipta dilindungi.",
 
@@ -236,7 +307,7 @@ export const content = {
 
     hero: {
       greeting: "Hello! I am",
-      role: "Front-End Developer | Web Designer",
+      role: "Data Analyst | Business Intelligence Enthusiast",
       projectButton: "View Projects",
       linkedinButton: "LinkedIn",
       cvButton: "Download CV",
@@ -252,9 +323,9 @@ export const content = {
     bgText: "ABOUT",
     label: "About Me",
     title: "About\nMe.",
-    p1: "I am an Informatics graduate focused on Front-End Development and Web Design.",
-    p2: "Experienced in building websites and web applications using React.js, Tailwind CSS, Bootstrap, JavaScript, HTML, and CSS through academic projects, personal projects, and internship experiences.",
-    p3: "Passionate about creating modern, responsive, and user-friendly digital experiences that combine creativity, design, and technology.",
+    p1: "I am an Informatics graduate with a strong interest in Data Analytics and Business Intelligence.",
+    p2: "I have hands-on experience in data processing, analysis, and visualization through academic projects, personal projects, and internship experience.",
+    p3: "I am passionate about transforming data into actionable insights that support business decision-making through data analysis, interactive dashboards, and meaningful visualizations.",
     },
 
     softSkills: {
@@ -301,49 +372,120 @@ export const content = {
     bgText: "CERTIFICATION",
     label: "Professional Development",
     title: "Certification\n& Training.",
-    issuedLabel: "Issued",
-    issuer: "Microsoft via Coursera",
-    certificateName: "Back-End Development\nwith .NET",
-    description:
-        "Learned modern backend development using C#, ASP.NET Core, REST API Development, Entity Framework Core, Authentication & Authorization, Dependency Injection, Swagger/OpenAPI, Middleware, API Testing, and frontend-backend integration.",
+
+    items: [
+        {
+        year: "2026",
+        issuer: "MySkill",
+        title: "Microsoft Excel\nIntermediate",
+
+        images: [
+            "/certificates/excel-lookup.png",
+            "/certificates/excel-pivot.png",
+            "/certificates/excel-chart.png",
+        ],
+
+        description:
+            "Learned Microsoft Excel for data analysis, Pivot Tables, Lookup functions, dashboards, and data visualization.",
+
+        tags: [
+            "Excel",
+            "Pivot Table",
+            "Lookup",
+            "Dashboard",
+        ],
+        },
+
+        {
+        year: "2026",
+        issuer: "MySkill",
+        title: "Data Analytics\nin Power BI",
+
+        images: [
+            "/certificates/powerbi.png",
+        ],
+
+        description:
+            "Learned data modeling, Power Query, DAX, and interactive dashboard development using Power BI.",
+
+        tags: [
+            "Power BI",
+            "Dashboard",
+            "DAX",
+        ],
+        },
+
+        {
+        year: "2026",
+        issuer: "DQLab",
+        title: "Fundamental SQL\nSeries",
+
+        images: [
+            "/certificates/sql-function-groupby.png",
+            "/certificates/sql-groupby-having.png",
+            "/certificates/sql-join-union.png",
+            "/certificates/sql-orderby.png",
+            "/certificates/sql-logical-operator.png",
+            "/certificates/sql-subquery.png",
+        ],
+
+        description:
+            "Learned SQL fundamentals including SELECT, JOIN, GROUP BY, ORDER BY, HAVING, and Subquery.",
+
+        tags: [
+            "SQL",
+            "JOIN",
+            "GROUP BY",
+            "Subquery",
+        ],
+        },
+
+        {
+        year: "2026",
+        issuer: "DQLab",
+        title: "Business Decision\nResearch",
+
+        images: [
+            "/certificates/business-decision.png",
+        ],
+
+        description:
+            "Learned business analytics and data-driven decision making for business problem solving.",
+
+        tags: [
+            "Business",
+            "Analytics",
+        ],
+        },
+    ],
     },
 
     projects: {
-    bgText: "PROJECTS",
+    bgText: "PROJECT",
     label: "Portfolio",
     title: "Selected\nProjects.",
-    desc: "A curated collection of web, backend, UI/UX, and data projects.",
+    desc: "A selection of projects showcasing my experience in data analytics, business intelligence, machine learning, and intelligent systems.",
     swipe: "Swipe to explore",
     items: [
         {
-        title: "Muse & Brew",
-        desc: "A coffee shop company profile website designed to showcase brand identity, menu offerings, gallery, and business information through a modern and responsive user experience.",
-        badge: "Front-End Developer",
+        title: "SuperStores US Executive Sales Dashboard",
+        desc: "Developed an interactive Power BI dashboard to analyze sales performance, profit trends, customer segments, and regional insights using Power Query, DAX, and data visualization techniques.",
+        badge: "Business Intelligence",
         },
         {
-        title: "JobTracker",
-        desc: "A fullstack web application for managing job applications, interview schedules, notes, and career progress in one workspace.",
-        badge: "Fullstack Developer",
+        title: "Retail Customer Churn Analysis & Prediction",
+        desc: "Built a machine learning model to predict customer churn through data preprocessing, exploratory data analysis (EDA), feature engineering, model evaluation, and predictive analytics using Python.",
+        badge: "Data Analytics",
         },
         {
         title: "Nutritional Status Diagnosis System",
-        desc: "A web-based expert system for diagnosing nutritional status and providing personalized recommendations.",
-        badge: "Fullstack Developer",
-        },
-        {
-        title: "KonserKita Ticketing System",
-        desc: "A concert ticket booking platform with responsive interfaces, admin dashboard, and user-friendly experience.",
-        badge: "UI/UX Designer",
-        },
-        {
-        title: "SOSMEDCARE Expert System",
-        desc: "A web-based expert system using Backward Chaining to analyze social media addiction levels.",
-        badge: "Backend Developer",
+        desc: "Developed a web-based expert system using Flask, Fuzzy Logic, and Decision Tree to assess nutritional status and provide personalized healthy lifestyle recommendations.",
+        badge: "Intelligent System",
         },
         {
         title: "Indonesian Presidential Inauguration Sentiment Analysis",
-        desc: "A data science project analyzing public sentiment on X using text preprocessing, TF-IDF, Naive Bayes, and SMOTE optimization.",
-        badge: "Data Science",
+        desc: "Performed sentiment analysis on public discussions from X using text preprocessing, TF-IDF, Naive Bayes, and SMOTE to classify sentiment and generate data-driven insights.",
+        badge: "Machine Learning",
         },
     ],
     },
@@ -421,10 +563,10 @@ export const content = {
     },
 
     desc:
-        "Thank you for visiting my portfolio. I am open to discussing career opportunities, collaborations, and digital product ideas.",
+         "Thank you for visiting my portfolio. I am open to job opportunities, collaborations, and discussions related to data analytics, business intelligence, machine learning, and data-driven decision making.",
 
     role:
-        "Front-End Developer • Web Designer",
+        "Data Analyst | Business Intelligence Enthusiast",
 
     copyright: "All rights reserved.",
 

@@ -6,18 +6,22 @@ import {
 import { useRef } from "react";
 
 const skills = [
-  "C#", "ASP.NET Core",
-  "Python", "Flask",
-  "PHP", "Laravel", "CodeIgniter 3",
-  "JavaScript", "React JS",
-  "HTML", "CSS",
-  "Tailwind CSS", "Bootstrap",
-  "PostgreSQL", "MySQL", "SQLite",
-  "REST API Development",
-  "Entity Framework Core",
-  "Authentication & Authorization",
-  "Software Testing",
-  "Machine Learning", "Data Analysis"
+  "Microsoft Excel",
+  "SQL",
+  "Power BI",
+  "Python",
+  "Pandas",
+  "Data Analysis",
+  "Data Cleaning",
+  "Data Visualization",
+  "Machine Learning",
+  "PostgreSQL",
+  "MySQL",
+  "SQLite",
+  "Flask",
+  "REST API",
+  "Git",
+  "GitHub"
 ];
 
 function SkillChip({ skill }) {

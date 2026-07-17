@@ -2,46 +2,79 @@ import { motion } from "framer-motion";
 
 import sentiment from "../assets/sentiment.png";
 import nutrition from "../assets/nutrition.png";
-import konser from "../assets/konser.png";
-import sosmed from "../assets/sosmed.png";
-import jobtracker from "../assets/jobtracker.png";
-import musebrew from "../assets/musebrew.png";
+import powerbi from "../assets/powerbi-dashboard.png";
+import churn from "../assets/customer-churn.png";
 
 const projectAssets = [
   {
-    image: musebrew,
-    tags: ["React JS", "Tailwind CSS", "Framer Motion"],
+    image: powerbi,
+    tags: [
+      "Power BI",
+      "DAX",
+      "Power Query",
+      "Data Visualization",
+      "Dashboard",
+    ],
     links: [
-      { label: "Live Demo", url: "https://muse-and-brew-company-profile.vercel.app/" },
-      { label: "GitHub", url: "https://github.com/adilazahiraa/muse-and-brew-company-profile" },
+      {
+        label: "GitHub",
+        url: "https://github.com/adilazahiraa/SuperStores-US-Sales-Dashboard",
+      },
     ],
   },
+
   {
-    image: jobtracker,
-    tags: ["React", "ASP.NET Core", "PostgreSQL", "Tailwind"],
-    links: [{ label: "GitHub", url: "https://github.com/adilazahiraa/jobtracker-fullstack" }],
+    image: churn,
+    tags: [
+      "Python",
+      "Pandas",
+      "Scikit-learn",
+      "EDA",
+      "Machine Learning",
+    ],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/adilazahiraa/Retail-Customer-Churn-Analysis",
+      },
+    ],
   },
+
   {
     image: nutrition,
-    tags: ["Python", "Flask", "SQLite", "Tailwind"],
-    links: [{ label: "GitHub", url: "https://github.com/adilazahiraa/skripsi" }],
+    tags: [
+      "Python",
+      "Flask",
+      "MySQL",
+      "Fuzzy Logic",
+      "Decision Tree",
+    ],
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/adilazahiraa/skripsi",
+      },
+    ],
   },
-  {
-    image: konser,
-    tags: ["Figma", "UI/UX Design", "Laravel", "Tailwind"],
-    links: [{ label: "GitHub", url: "https://github.com/adilazahiraa/konserkita-ticketing-system" }],
-  },
-  {
-    image: sosmed,
-    tags: ["Laravel", "PHP", "SQLite", "Backward Chaining"],
-    links: [{ label: "GitHub", url: "https://github.com/adilazahiraa/sosmedcare-expert-system" }],
-  },
+
   {
     image: sentiment,
-    tags: ["Python", "Naive Bayes", "SMOTE", "NLP"],
+    tags: [
+      "Python",
+      "NLP",
+      "TF-IDF",
+      "Naive Bayes",
+      "SMOTE",
+    ],
     links: [
-      { label: "Publication", url: "https://jutif.if.unsoed.ac.id/index.php/jurnal/article/view/4290" },
-      { label: "GitHub", url: "https://github.com/adilazahiraa/text-mining-sentiment-analysis" },
+      {
+        label: "Publication",
+        url: "https://jutif.if.unsoed.ac.id/index.php/jurnal/article/view/4290",
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/adilazahiraa/text-mining-sentiment-analysis",
+      },
     ],
   },
 ];

@@ -1,14 +1,208 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+
+function CertificateCard({ cert, index }) {
+  const [current, setCurrent] = useState(0);
+
+  const prev = () => {
+    setCurrent((prev) =>
+      prev === 0 ? cert.images.length - 1 : prev - 1
+    );
+  };
+
+  const next = () => {
+    setCurrent((prev) =>
+      prev === cert.images.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 45 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      whileHover={{ y: -6 }}
+      className="
+        group
+        rounded-[2rem]
+        border
+        border-[#4A2C2A]/10
+        bg-[#FBF6EE]/85
+        p-7
+        shadow-[0_20px_60px_rgba(74,44,42,0.12)]
+        backdrop-blur-xl
+      "
+    >
+      {/* HEADER */}
+
+      <div className="flex items-start justify-between">
+        <div>
+
+          <p className="text-xs uppercase tracking-[0.28em] text-[#B8956A]">
+            {cert.issuer}
+          </p>
+
+          <h3 className="mt-2 font-syne text-3xl font-bold">
+            {cert.title.split("\n").map((line) => (
+              <span key={line}>
+                {line}
+                <br />
+              </span>
+            ))}
+          </h3>
+
+        </div>
+
+        <span className="text-[#B8956A] font-semibold">
+          {cert.year}
+        </span>
+      </div>
+
+      {/* IMAGE */}
+
+      <div className="relative mt-6">
+
+        <img
+          src={cert.images[current]}
+          alt={cert.title}
+          className="
+            h-64
+            w-full
+            rounded-2xl
+            object-cover
+            transition
+            duration-300
+            group-hover:scale-[1.02]
+          "
+        />
+
+        {cert.images.length > 1 && (
+          <>
+          <button
+            onClick={prev}
+            className="
+              absolute
+              left-4
+              top-1/2
+              -translate-y-1/2
+
+              flex
+              items-center
+              justify-center
+
+              h-11
+              w-11
+
+              rounded-full
+              bg-[#4A2C2A]/80
+              text-white
+              backdrop-blur-md
+
+              shadow-xl
+              transition-all
+              duration-300
+
+              hover:scale-110
+              hover:bg-[#4A2C2A]
+            "
+          >
+            ‹
+          </button>
+
+          <button
+            onClick={next}
+            className="
+              absolute
+              right-4
+              top-1/2
+              -translate-y-1/2
+
+              flex
+              items-center
+              justify-center
+
+              h-11
+              w-11
+
+              rounded-full
+              bg-[#4A2C2A]/80
+              text-white
+              backdrop-blur-md
+
+              shadow-xl
+              transition-all
+              duration-300
+
+              hover:scale-110
+              hover:bg-[#4A2C2A]
+            "
+          >
+            ›
+          </button>
+          </>
+        )}
+      </div>
+
+      {/* DOT */}
+
+      {cert.images.length > 1 && (
+
+        <div className="mt-4 flex justify-center gap-2">
+
+          {cert.images.map((_, i) => (
+
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`h-2.5 rounded-full transition-all ${
+                current === i
+                  ? "w-8 bg-[#B8956A]"
+                  : "w-2.5 bg-[#D6C4AF]"
+              }`}
+            />
+
+          ))}
+
+        </div>
+
+      )}
+
+      {/* DESC */}
+
+      <p className="mt-6 text-[15px] leading-7 text-[#4A2C2A]/70">
+        {cert.description}
+      </p>
+
+      {/* TAG */}
+
+      <div className="mt-6 flex flex-wrap gap-2">
+
+        {cert.tags.map((tag) => (
+
+          <span
+            key={tag}
+            className="
+              rounded-full
+              border
+              border-[#4A2C2A]/10
+              bg-white/70
+              px-4
+              py-2
+              text-xs
+            "
+          >
+            {tag}
+          </span>
+
+        ))}
+
+      </div>
+
+    </motion.div>
+  );
+}
 
 function Certifications({ t }) {
-  const tags = [
-    "ASP.NET Core",
-    "REST API",
-    "Entity Framework",
-    "Authentication",
-    "Swagger",
-    "API Testing",
-  ];
 
   return (
     <section
@@ -114,182 +308,15 @@ function Certifications({ t }) {
         </motion.div>
 
         {/* CERTIFICATE CARD */}
-        <motion.div
-          initial={{ opacity: 0, y: 45 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.22 }}
-          transition={{
-            duration: 0.85,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          whileHover={{ y: -6 }}
-          className="
-            group
-            relative
-            overflow-hidden
-            rounded-[2rem]
-            border
-            border-[#4A2C2A]/10
-            bg-[#FBF6EE]/82
-            p-6
-            shadow-[0_20px_60px_rgba(74,44,42,0.12)]
-            backdrop-blur-xl
-            transition-all
-            duration-500
-            hover:border-[#B8956A]/45
-            hover:bg-[#FBF6EE]/95
-            hover:shadow-[0_34px_90px_rgba(74,44,42,0.17)]
-            sm:p-8
-            md:rounded-[2.5rem]
-            md:p-14
-            md:shadow-[0_30px_85px_rgba(74,44,42,0.13)]
-            md:hover:shadow-[0_38px_100px_rgba(74,44,42,0.18)]
-          "
-        >
-          {/* CARD DECOR */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/70 via-transparent to-[#D5B893]/12 opacity-80" />
-          <div className="pointer-events-none absolute left-6 right-6 top-0 h-px bg-gradient-to-r from-transparent via-[#B8956A]/45 to-transparent md:left-10 md:right-10" />
-          <div className="pointer-events-none absolute -right-24 -top-24 h-52 w-52 rounded-full bg-[#B8956A]/18 blur-3xl md:h-64 md:w-64" />
-          <div className="pointer-events-none absolute -bottom-28 -left-28 h-56 w-56 rounded-full bg-white/60 blur-3xl md:h-72 md:w-72" />
-
-          <div
-            className="
-              relative
-              z-10
-              grid
-              gap-7
-              md:grid-cols-[120px_1fr]
-              md:items-start
-              md:gap-10
-            "
-          >
-            {/* LEFT META */}
-            <div className="flex items-end justify-between gap-4 md:block">
-              <p
-                className="
-                  font-syne
-                  text-[44px]
-                  font-bold
-                  leading-none
-                  tracking-[-0.07em]
-                  text-[#4A2C2A]/15
-                  sm:text-[52px]
-                  md:text-[58px]
-                "
-              >
-                01
-              </p>
-
-              <div className="text-right md:mt-7 md:text-left">
-                <p className="font-manrope text-[10px] font-semibold uppercase tracking-[0.26em] text-[#B8956A] md:tracking-[0.3em]">
-                  {t.certifications.issuedLabel}
-                </p>
-
-                <p className="mt-1 font-manrope text-sm font-semibold text-[#2B1A18] md:mt-2">
-                  2026
-                </p>
-              </div>
-            </div>
-
-            {/* RIGHT CONTENT */}
-            <div>
-              <p
-                className="
-                  font-manrope
-                  text-[10px]
-                  font-semibold
-                  uppercase
-                  tracking-[0.22em]
-                  text-[#B8956A]
-                  md:text-[11px]
-                  md:tracking-[0.28em]
-                "
-              >
-                {t.certifications.issuer}
-              </p>
-
-              <h3
-                className="
-                  mt-3
-                  font-syne
-                  text-[28px]
-                  font-bold
-                  leading-[0.98]
-                  tracking-[-0.055em]
-                  text-[#2B1A18]
-                  sm:text-[32px]
-                  md:mt-4
-                  md:text-[48px]
-                "
-              >
-                {t.certifications.certificateName
-                  .split("\n")
-                  .map((line) => (
-                    <span key={line}>
-                      {line}
-                      <br />
-                    </span>
-                  ))}
-              </h3>
-              <p
-                className="
-                  mt-5
-                  max-w-[720px]
-                  font-manrope
-                  text-[13.5px]
-                  leading-7
-                  text-[#4A2C2A]/70
-                  sm:text-[14px]
-                  md:mt-7
-                  md:text-[15px]
-                  md:leading-8
-                "
-              >
-                {t.certifications.description}
-              </p>
-
-              {/* TAGS */}
-              <div className="mt-6 flex flex-wrap gap-2 sm:gap-3 md:mt-8">
-                {tags.map((item, i) => (
-                  <motion.span
-                    key={item}
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false }}
-                    transition={{
-                      duration: 0.5,
-                      delay: 0.12 + i * 0.05,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    whileHover={{ y: -3 }}
-                    className="
-                      rounded-full
-                      border
-                      border-[#4A2C2A]/12
-                      bg-white/60
-                      px-3
-                      py-1.5
-                      font-manrope
-                      text-[11px]
-                      font-medium
-                      text-[#4A2C2A]
-                      shadow-[0_8px_24px_rgba(74,44,42,0.06)]
-                      transition
-                      hover:border-[#B8956A]/50
-                      hover:bg-[#4A2C2A]
-                      hover:text-[#F7EFE3]
-                      sm:px-4
-                      sm:py-2
-                      sm:text-[13px]
-                    "
-                  >
-                    {item}
-                  </motion.span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        <div className="grid gap-8 lg:grid-cols-2">
+          {t.certifications.items.map((cert, index) => (
+            <CertificateCard
+              key={cert.title}
+              cert={cert}
+              index={index}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
