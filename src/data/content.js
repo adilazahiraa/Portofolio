@@ -10,7 +10,7 @@ export const content = {
 
     contact: {
     title: "Hubungi Saya",
-    desc: "Terbuka untuk peluang kerja, kolaborasi, maupun diskusi mengenai pengembangan website dan aplikasi.",
+    desc: "Terbuka untuk peluang kerja, kolaborasi, maupun diskusi seputar analisis data, business intelligence, machine learning, dan pengambilan keputusan berbasis data.",
     whatsapp: "WhatsApp",
     email: "Email",
     close: "Tutup",
@@ -299,7 +299,7 @@ export const content = {
 
     contact: {
     title: "Contact Me",
-    desc: "I am open to discussing job opportunities, collaborations, and web development projects.",
+    desc: "Open to job opportunities, collaborations, and discussions related to data analytics, business intelligence, machine learning, and data-driven decision making.",
     whatsapp: "WhatsApp",
     email: "Email",
     close: "Close",
